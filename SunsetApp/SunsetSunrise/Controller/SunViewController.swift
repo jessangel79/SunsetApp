@@ -31,6 +31,10 @@ final class SunViewController: UIViewController {
     
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
         getSunsetSunrise()
+        
+        // test
+        saveDataSun()
+        displaySunCount()
     }
     
     @IBAction func sunsetButtonClicked(_ sender: UISwitch) {
@@ -63,7 +67,13 @@ final class SunViewController: UIViewController {
         customUI()
         getSunsetSunrise()
         setAlarmSwitch()
+        saveDataSun()
+        displaySunCount()
     }
+    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//    }
     
     // MARK: - Methods
     
@@ -120,5 +130,25 @@ final class SunViewController: UIViewController {
         sunsetLabel.text = sunApiResults?.sunset.date24()
         sunriseLabel.text = sunApiResults?.sunrise.date24()
         dayLengthLabel.text = sunApiResults?.dayLength
+    }
+    
+    private func saveDataSun() {
+        let sun = Sun()
+        sun.sunset = sunApiResults?.sunset ?? ""
+        sun.sunrise = sunApiResults?.sunrise ?? ""
+        sun.dayLength = sunApiResults?.dayLength ?? ""
+        sun.currentDate = currentDate
+        
+        let realm = try? Realm()
+        try? realm?.write {
+            realm?.add(sun)
+        }
+    }
+    
+    private func displaySunCount() {
+        let realm = try? Realm()
+        let sunList = realm?.objects(Sun.self)
+        guard let sunListCount = sunList?.count else { return }
+        print("il y a \(sunListCount) Sun dans la liste")
     }
 }

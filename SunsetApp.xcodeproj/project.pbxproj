@@ -16,7 +16,7 @@
 		3A028E2E251CC70D00FC7C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A028E2C251CC70D00FC7C37 /* LaunchScreen.storyboard */; };
 		3A028E39251CC70E00FC7C37 /* SunsetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E38251CC70E00FC7C37 /* SunsetAppTests.swift */; };
 		3A028E44251CC70E00FC7C37 /* SunsetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E43251CC70E00FC7C37 /* SunsetAppUITests.swift */; };
-		3A028E66251CCBD600FC7C37 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */; };
+		3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A028E65251CCBD600FC7C37 /* Alamofire */; };
 		3A59214F251CD17700D882EA /* Fake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59214E251CD17700D882EA /* Fake.swift */; };
 		3A592165251CD47000D882EA /* Sun.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A592164251CD47000D882EA /* Sun.storyboard */; };
 		3A592173251CE6C600D882EA /* UIViewController+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A592172251CE6C600D882EA /* UIViewController+CustomUI.swift */; };
@@ -29,6 +29,7 @@
 		3A5921A8251D101800D882EA /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5921A7251D101800D882EA /* Informations.storyboard */; };
 		3A5921AF251D109100D882EA /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5921AE251D109100D882EA /* InformationsViewController.swift */; };
 		3A5921B7251D1AE800D882EA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5921B6251D1AE800D882EA /* String.swift */; };
+		3AE2A558251FB425001BE721 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2A557251FB425001BE721 /* Sun.swift */; };
 		A151A53C2EE45AD599300464 /* Pods_SunsetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F616DA6B044BAE6A64AB4E /* Pods_SunsetApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		3A5921A7251D101800D882EA /* Informations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Informations.storyboard; sourceTree = "<group>"; };
 		3A5921AE251D109100D882EA /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
 		3A5921B6251D1AE800D882EA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		3AE2A557251FB425001BE721 /* Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
 		7D2FD03FA86C458EE4C6EE60 /* Pods_SunsetAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunsetAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3640FAF16BB4522270B226 /* Pods-SunsetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetApp.release.xcconfig"; path = "Target Support Files/Pods-SunsetApp/Pods-SunsetApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A028E66251CCBD600FC7C37 /* BuildFile in Frameworks */,
+				3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */,
 				A151A53C2EE45AD599300464 /* Pods_SunsetApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +212,7 @@
 				3A59217C251CF27600D882EA /* SunService.swift */,
 				3A592184251CF28C00D882EA /* SunProtocol.swift */,
 				3A592189251CF2A700D882EA /* SunAPI.swift */,
+				3AE2A557251FB425001BE721 /* Sun.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,7 +309,7 @@
 			);
 			name = SunsetApp;
 			packageProductDependencies = (
-				3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */,
+				3A028E65251CCBD600FC7C37 /* Alamofire */,
 			);
 			productName = SunsetApp;
 			productReference = 3A028E1E251CC70C00FC7C37 /* SunsetApp.app */;
@@ -381,7 +384,7 @@
 			);
 			mainGroup = 3A028E15251CC70C00FC7C37;
 			packageReferences = (
-				3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */,
+				3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3A028E1F251CC70C00FC7C37 /* Products */;
 			projectDirPath = "";
@@ -509,6 +512,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE2A558251FB425001BE721 /* Sun.swift in Sources */,
 				3A59219E251D0E2300D882EA /* UIViewController+Alert.swift in Sources */,
 				3A028E26251CC70C00FC7C37 /* SunViewController.swift in Sources */,
 				3A028E22251CC70C00FC7C37 /* AppDelegate.swift in Sources */,
@@ -864,7 +868,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */ = {
+		3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -875,9 +879,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */ = {
+		3A028E65251CCBD600FC7C37 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */;
+			package = 3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
