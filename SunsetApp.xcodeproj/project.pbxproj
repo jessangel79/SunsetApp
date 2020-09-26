@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		021B7025A4AD30D87E4D0BC6 /* Pods_SunsetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F616DA6B044BAE6A64AB4E /* Pods_SunsetApp.framework */; };
 		1D659C8DA8C963DE48AA7811 /* Pods_SunsetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2FD03FA86C458EE4C6EE60 /* Pods_SunsetAppTests.framework */; };
 		3A028E22251CC70C00FC7C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E21251CC70C00FC7C37 /* AppDelegate.swift */; };
 		3A028E24251CC70C00FC7C37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E23251CC70C00FC7C37 /* SceneDelegate.swift */; };
@@ -30,6 +29,7 @@
 		3A5921A8251D101800D882EA /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5921A7251D101800D882EA /* Informations.storyboard */; };
 		3A5921AF251D109100D882EA /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5921AE251D109100D882EA /* InformationsViewController.swift */; };
 		3A5921B7251D1AE800D882EA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5921B6251D1AE800D882EA /* String.swift */; };
+		A151A53C2EE45AD599300464 /* Pods_SunsetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F616DA6B044BAE6A64AB4E /* Pods_SunsetApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */,
-				021B7025A4AD30D87E4D0BC6 /* Pods_SunsetApp.framework in Frameworks */,
+				A151A53C2EE45AD599300464 /* Pods_SunsetApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +298,7 @@
 				3A028E1B251CC70C00FC7C37 /* Frameworks */,
 				3A028E1C251CC70C00FC7C37 /* Resources */,
 				3A59214C251CD10000D882EA /* ShellScript */,
+				867DF2EF36909E2A587651B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,6 +320,7 @@
 				3A028E30251CC70E00FC7C37 /* Sources */,
 				3A028E31251CC70E00FC7C37 /* Frameworks */,
 				3A028E32251CC70E00FC7C37 /* Resources */,
+				9C92F08C8308CBAA754642CD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -462,6 +464,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		867DF2EF36909E2A587651B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		95A0F6710D2D9574B523222A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +501,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C92F08C8308CBAA754642CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -681,6 +717,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "SunsetApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -700,6 +740,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "SunsetApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -718,6 +762,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SunsetAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -740,6 +785,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SunsetAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
