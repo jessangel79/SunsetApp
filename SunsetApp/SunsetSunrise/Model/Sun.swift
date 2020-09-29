@@ -9,8 +9,14 @@ import Foundation
 import RealmSwift
 
 class Sun: Object {
-    dynamic var currentDate = ""
-    dynamic var sunset = ""
-    dynamic var sunrise = ""
-    dynamic var dayLength = ""
+//    dynamic var id = 0
+    @objc dynamic var oldDate = ""
+    @objc dynamic var currentDate = ""
+    @objc dynamic var sunset = ""
+    @objc dynamic var sunrise = ""
+    @objc dynamic var dayLength = ""
+    
+//    override class func primaryKey() -> String? {
+//        return "id"
+//    }
 }

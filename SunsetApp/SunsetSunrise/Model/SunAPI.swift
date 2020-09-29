@@ -12,12 +12,12 @@ import Foundation
 
 // MARK: - SunAPI
 struct SunAPI: Decodable {
-    let results: Results
+    let results: ResultsApi
     let status: String
 }
 
 // MARK: - Results
-struct Results: Decodable {
+struct ResultsApi: Decodable {
     let sunrise, sunset, solarNoon, dayLength: String
     let civilTwilightBegin, civilTwilightEnd, nauticalTwilightBegin, nauticalTwilightEnd: String
     let astronomicalTwilightBegin, astronomicalTwilightEnd: String
