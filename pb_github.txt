@@ -1,0 +1,11 @@
+Décompte des objets: 100% (626/626), fait.
+Compression par delta en utilisant jusqu'à 4 fils d'exécution
+Compression des objets: 100% (601/601), fait.
+Écriture des objets: 100% (620/620), 28.90 Mio | 4.08 Mio/s, fait.
+Total 620 (delta 126), réutilisés 0 (delta 0), réutilisés du pack 0
+remote: Resolving deltas: 100% (126/126), completed with 1 local object.
+remote: warning: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.
+remote: warning: See http://git.io/iEPt8g for more information.
+remote: warning: File Pods/Realm/core/librealmcore-ios.a is 70.45 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+To https://github.com/jessangel79/SunsetApp.git
+   e52095c..62167dd  master -> master

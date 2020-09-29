@@ -34,7 +34,6 @@ final class SunViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func refreshButtonTapped(_ sender: UIButton) {
-//        getSunsetSunrise()
         setData()
     }
     
@@ -42,12 +41,6 @@ final class SunViewController: UIViewController {
         if alarmSunsetSwitch.isOn {
             sender.setOn(false, animated: true)
             print("sunset is Off")
-            
-//            deleteDataSun(code: sun.sunset)
-            
-            setData()
-            print("oldDate in sunsetButtonClicked : \(oldDate) - currentDate : \(currentDate)")
-            
 //            alarmSunsetSwitch.offImage = .actions
         } else {
             sender.setOn(true, animated: true)
@@ -67,56 +60,19 @@ final class SunViewController: UIViewController {
     }
     
     // MARK: - View Life Cycle
-
-//    fileprivate func setData() {
-//        if sunApiResults != nil {
-//            if oldDate == currentDate {
-//                setDataLabels()
-//                displaySunCount()
-//            } else {
-//                deleteAllDataSun()
-//                getSunsetSunrise()
-//            }
-//        } else {
-//            deleteAllDataSun()
-//            getSunsetSunrise()
-//        }
-//    }
-    
-    fileprivate func setData() {
-        if oldDate == currentDate {
-            setDataLabels()
-            displaySunCount()
-        } else {
-//            deleteAllDataSun()
-            getSunsetSunrise()
-        }
-//        if sunApiResults == nil {
-//            deleteAllDataSun()
-//            getSunsetSunrise()
-//        } else {
-//            setDataLabels()
-//            displaySunCount()
-//        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        currentDate = "2020-09-30"
+        customUI()
         currentDate = currentDate.getCurrentDate()
         oldDate = getOldDate()
-//        oldDate = "2020-09-29"
-                
-        customUI()
-        
-        print("oldDate in viewdidload : \(oldDate) - currentDate : \(currentDate)")
-        
         setData()
-        
         setAlarmSwitch()
-        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
+        // for Realm Studio
+        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        // debug
+        print("oldDate in viewdidload : \(oldDate) - currentDate : \(currentDate)")
         debugRealm()
     }
     
@@ -145,20 +101,7 @@ final class SunViewController: UIViewController {
             print("The switch is Off")
         }
     }
-    
-    private func debugRealm() {
-        guard let sunList = realm?.objects(Sun.self) else { return }
-        for sun in sunList {
-            print("sunset - viewDidLoad: \(sun.sunset)")
-            print("sunrise - viewDidLoad: \(sun.sunrise)")
-            print("dayLength - viewDidLoad: \(sun.dayLength)")
-            print("sun.oldDate - viewDidLoad: \(sun.oldDate)")
-            print("sun.currentDate - viewDidLoad: \(sun.currentDate)")
-            print("oldDate - viewDidLoad: \(oldDate)")
-            print("currentDate - viewDidLoad: \(currentDate)")
-        }
-    }
-    
+
     private func getOldDate() -> String {
         guard let sunList = realm?.objects(Sun.self) else { return "" }
         var oldDateTemp = ""
@@ -166,52 +109,52 @@ final class SunViewController: UIViewController {
             oldDateTemp = sun.oldDate
         }
         return oldDateTemp
-        
-//        guard let sunList = realm?.objects(Sun.self) else { return }
-//        for sun in sunList {
-//            let sunset = sun.sunset
-//            let sunrise = sun.sunrise
-//            let dayLength = sun.dayLength
+    }
+    
+    private func setData() {
+        if oldDate == currentDate {
+            setDataLabels()
+            displaySunCount()
+            toggleActivityIndicator(shown: false,
+                                    activityIndicator: self.activityIndicator,
+                                    validateButton: self.refreshButton)
+        } else {
+            getSunsetSunrise()
+        }
     }
     
     private func getSunsetSunrise() {
-//        if currentDate == oldDate {
-//            setDataLabels()
-//            displaySunCount()
-//        } else {
-            deleteAllDataSun()
-            sunService.getSunsetSunrise(currentDate: currentDate) { (success, sunApi) in
-                self.toggleActivityIndicator(shown: false,
-                                             activityIndicator: self.activityIndicator,
-                                             validateButton: self.refreshButton)
-                if success {
-                    guard let sunApi = sunApi else { return }
-                    if sunApi.status == "OK" {
-                        self.sunApiResults = sunApi.results
-                        self.setLabels()
-                        self.saveDataSun()
-                        self.displaySunCount()
-                    } else {
-                        self.presentAlert(typeError: .error)
-                        self.toggleActivityIndicator(shown: false,
-                                                     activityIndicator: self.activityIndicator,
-                                                     validateButton: self.refreshButton)
-                    }
+        deleteAllDataSun()
+        sunService.getSunsetSunrise(currentDate: currentDate) { (success, sunApi) in
+            self.toggleActivityIndicator(shown: false,
+                                         activityIndicator: self.activityIndicator,
+                                         validateButton: self.refreshButton)
+            if success {
+                guard let sunApi = sunApi else { return }
+                if sunApi.status == "OK" {
+                    self.sunApiResults = sunApi.results
+                    self.setLabels()
+                    self.saveDataSun()
+                    self.displaySunCount()
                 } else {
                     self.presentAlert(typeError: .error)
                     self.toggleActivityIndicator(shown: false,
                                                  activityIndicator: self.activityIndicator,
                                                  validateButton: self.refreshButton)
                 }
+            } else {
+                self.presentAlert(typeError: .error)
+                self.toggleActivityIndicator(shown: false,
+                                             activityIndicator: self.activityIndicator,
+                                             validateButton: self.refreshButton)
             }
-//        }
+        }
     }
     
     private func setLabels() {
-        print("sunset.date24 : \(String(describing: sunApiResults?.sunset.date24()))")
-        print("sunrise : \(String(describing: sunApiResults?.sunrise.date24()))")
-        print("dayLength : \(String(describing: sunApiResults?.dayLength))")
-        
+//        print("sunset.date24 : \(String(describing: sunApiResults?.sunset.date24()))")
+//        print("sunrise : \(String(describing: sunApiResults?.sunrise.date24()))")
+//        print("dayLength : \(String(describing: sunApiResults?.dayLength))")
         sunsetLabel.text = sunApiResults?.sunset.date24()
         sunriseLabel.text = sunApiResults?.sunrise.date24()
         dayLengthLabel.text = sunApiResults?.dayLength
@@ -240,6 +183,19 @@ final class SunViewController: UIViewController {
         print("il y a \(String(describing: sunList?.count)) Sun dans la liste")
     }
     
+    private func debugRealm() {
+        guard let sunList = realm?.objects(Sun.self) else { return }
+        for sun in sunList {
+            print("sunset - viewDidLoad: \(sun.sunset)")
+            print("sunrise - viewDidLoad: \(sun.sunrise)")
+            print("dayLength - viewDidLoad: \(sun.dayLength)")
+            print("sun.oldDate - viewDidLoad: \(sun.oldDate)")
+            print("sun.currentDate - viewDidLoad: \(sun.currentDate)")
+            print("oldDate - viewDidLoad: \(oldDate)")
+            print("currentDate - viewDidLoad: \(currentDate)")
+        }
+    }
+    
     private func saveDataSun() {
         let sun = Sun()
         sun.sunset = sunApiResults?.sunset.date24() ?? ""
@@ -263,70 +219,13 @@ final class SunViewController: UIViewController {
         } catch let error as NSError {
             print(error.localizedDescription)
         }
-
-        // other method to write with realm
-//        realm?.beginWrite()
-//        realm?.add(sun)
-//        try! realm?.commitWrite()
-        
-        // delete an object
-//        try? realm?.write {
-//            realm?.delete(sun)
-//        }
     }
     
-//    private func updateDataSun() {
-////        let sun = Sun()
-////        sun.sunset = sunApiResults?.sunset ?? ""
-////        sun.sunrise = sunApiResults?.sunrise ?? ""
-////        sun.dayLength = sunApiResults?.dayLength ?? ""
-////        sun.oldDate = currentDate
-//
-//        do {
-//            try realm?.write {
-////                realm?.add(sun)
-//                oldDate = currentDate
-//            }
-////            print("object saved - sunset : \(sun.sunset)")
-////            print("object saved - sunrise : \(sun.sunrise)")
-////            print("object saved - oldDate : \(sun.oldDate)")
-//            print("object saved - currentDate : \(currentDate)")
-//
-//        } catch let error as NSError {
-//            print(error.localizedDescription)
-//        }
-//
-//        // other method to write with realm
-////        realm?.beginWrite()
-////        realm?.add(sun)
-////        try! realm?.commitWrite()
-//
-//        // delete an object
-////        try? realm?.write {
-////            realm?.delete(sun)
-////        }
-//    }
 
     private func deleteAllDataSun() {
         realm?.beginWrite()
         realm?.delete((realm?.objects(Sun.self))!)
         try? realm?.commitWrite()
-//        do {
-//            try realm?.write {
-//                realm?.deleteAll()
-//            }
-//        } catch let error as NSError {
-//            print("error : \(error.localizedDescription)")
-//        }
-        
-//        do {
-//            let objects = (realm?.objects(Sun.self))!
-//            try realm?.write {
-//                realm?.delete(objects)
-//            }
-//        } catch let error as NSError {
-//            print("error : \(error.localizedDescription)")
-//        }
     }
     
     private func deleteDataSun() { // code: String
@@ -339,16 +238,5 @@ final class SunViewController: UIViewController {
         } catch let error as NSError {
             print("error : \(error.localizedDescription)")
         }
-//        do {
-////            let object = realm?.objects(Sun.self).filter("sunset = %@", code).first
-//            let object = realm?.objects(Sun.self).first
-//            try realm?.write {
-//                if let obj = object {
-//                    realm?.delete(obj)
-//                }
-//            }
-//        } catch let error as NSError {
-//            print("error : \(error.localizedDescription)")
-//        }
     }
 }
