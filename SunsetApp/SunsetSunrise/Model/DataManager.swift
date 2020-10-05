@@ -31,7 +31,7 @@ final class DataManager {
         }
     }
     
-    func saveDataSunNoFormatted(data: StructDataManagerNoFormatted, oldDateNoFormatted: inout String, typeHour: Double) {
+    func saveDataSunNoFormatted(data: StructDataManagerNoFormatted, oldDateNoFormatted: inout String) {
         let sunNoFormatted = SunNoFormatted()
         sunNoFormatted.sunset = data.sunApiResults?.sunset ?? ""
         sunNoFormatted.sunrise = data.sunApiResults?.sunrise ?? ""
