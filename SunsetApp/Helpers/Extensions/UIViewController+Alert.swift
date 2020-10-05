@@ -14,6 +14,7 @@ extension UIViewController {
     /// Enumeration of the error
     enum AlertError {
         case error
+        case errorAccess
     }
     
     /// Alert message for user
@@ -25,6 +26,9 @@ extension UIViewController {
         case .error:
             title = "Error"
             message = "Sorry an error is occured."
+        case .errorAccess:
+            title = "Error Acces"
+            message = "Sorry there is an error to access the calendar."
         }
         
         alertError(title, message)

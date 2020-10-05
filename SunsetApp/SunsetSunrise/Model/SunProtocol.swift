@@ -34,17 +34,27 @@ extension SunProtocol {
     var lng: String {
         return "lng=2.206869"
     }
+    
+    var noFormatted: String {
+        return "formatted=0"
+    }
 
 //    var date: String {
 //        return "date=today"
 //    }
 
-    /// url  for API to get places
+    /// url  for API to get sunset, surise and lengthday
     var urlStringApi: String {
         return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&date="
 //        return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&\(date)"
     }
     
+    /// url  for API to get sunset, surise and lengthday with date not formatted
+    var urlStringNoFormattedApi: String {
+        return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&\(noFormatted)&date="
+    }
+    
     // https://api.sunrise-sunset.org/json?lat=49.051111&lng=2.206869&date=2020-09-26 // today
+//    https://api.sunrise-sunset.org/json?lat=49.051111&lng=2.206869&formatted=0&date=2020-09-26 // Date not formatted
     
 }

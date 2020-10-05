@@ -26,6 +26,29 @@ extension UIViewController {
         button.layer.borderColor = colorBorder.cgColor
     }
     
+    /// custom collection buttons
+    func customButtons(buttons: [UIButton], radius: CGFloat, width: CGFloat, colorBackground: UIColor, colorBorder: UIColor) {
+        for button in buttons {
+            customButton(button: button, radius: radius, width: width, colorBackground: colorBackground, colorBorder: colorBorder)
+        }
+    }
+    
+    /// custom button with shadow
+    func customShadowButton(button: UIButton) {
+        button.clipsToBounds = false
+        button.layer.cornerRadius = 20
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.8
+        button.layer.shadowOffset = CGSize(width: 1, height: 1)
+    }
+    
+    /// custom collection buttons with shadow
+    func customShadowButtons(buttons: [UIButton]) {
+        for button in buttons {
+            customShadowButton(button: button)
+        }
+    }
+    
     /// custom labels collection
 //    func customAllLabels(allLabels: [UILabel], radius: CGFloat, width: CGFloat, colorBackground: UIColor, colorBorder: UIColor) {
 //        for label in allLabels {
@@ -41,7 +64,7 @@ extension UIViewController {
 //        label.layer.borderColor = colorBorder.cgColor
 //    }
     
-    /// custom views
+    /// custom view
     func customView(view: UIView, radius: CGFloat, width: CGFloat, colorBorder: UIColor) { // colorBackground: UIColor, 
         view.layer.cornerRadius = radius
         view.layer.borderWidth = width
@@ -52,26 +75,23 @@ extension UIViewController {
     /// custom view with shadow
     func customShadowView(view: UIView) {
         view.clipsToBounds = false
-        view.layer.cornerRadius = 15
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.8
         view.layer.shadowOffset = CGSize(width: 1, height: 1)
     }
     
-    /// custom button with shadow
-    func customShadowButton(button: UIButton) {
-        button.clipsToBounds = false
-        button.layer.cornerRadius = 20
-        button.layer.shadowColor = UIColor.black.cgColor
-        button.layer.shadowOpacity = 0.8
-        button.layer.shadowOffset = CGSize(width: 1, height: 1)
+    /// custom image view
+    func customImageView(imageView: UIImageView, radius: CGFloat, width: CGFloat, colorBorder: UIColor) {
+        imageView.layer.cornerRadius = radius
+        imageView.layer.borderWidth = width
+        imageView.layer.borderColor = colorBorder.cgColor
     }
     
-    /// custom imageView for Icon
-//    func customImageView(imageView: UIImageView, radius: CGFloat, width: CGFloat, colorBackground: UIColor, colorBorder: UIColor) {
-//        imageView.layer.cornerRadius = radius
-//        imageView.layer.borderWidth = width
-//        imageView.layer.backgroundColor = colorBackground.cgColor
-//        imageView.layer.borderColor = colorBorder.cgColor
-//    }
+    /// custom view with shadow
+    func customShadowImageView(imageView: UIImageView) {
+        imageView.clipsToBounds = false
+        imageView.layer.shadowColor = UIColor.black.cgColor
+        imageView.layer.shadowOpacity = 0.8
+        imageView.layer.shadowOffset = CGSize(width: 1, height: 1)
+    }
 }

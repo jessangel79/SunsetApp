@@ -11,6 +11,12 @@ import UIKit
 
 extension UIViewController {
     
+    /// manage the ActivityIndicator with UIView
+    func toggleActivityIndicator(shown: Bool, activityIndicator: UIActivityIndicatorView, view: UIView) {
+        activityIndicator.isHidden = !shown
+        view.isHidden = shown
+    }
+    
     /// manage the ActivityIndicator with UIButton
     func toggleActivityIndicator(shown: Bool, activityIndicator: UIActivityIndicatorView, validateButton: UIButton) {
         activityIndicator.isHidden = !shown
