@@ -20,7 +20,7 @@ final class SunService {
     // MARK: - Methods
     
     func getSunsetSunrise(date: String, completionHandler: @escaping (Bool, SunAPI?) -> Void) {
-        guard let url = createSunApiUrl(currentDate: date) else { return }
+        guard let url = createSunApiUrl(date: date) else { return }
         print("getSunsetSunrise :\(url)")
         
         sunSession.request(url: url) { responseData in
@@ -40,13 +40,13 @@ final class SunService {
         }
     }
     
-    private func createSunApiUrl(currentDate: String) -> URL? {
-        guard let url = URL(string: sunSession.urlStringApi + currentDate) else { return nil }
+    private func createSunApiUrl(date: String) -> URL? {
+        guard let url = URL(string: sunSession.urlStringApi + date) else { return nil }
         return url
     }
     
-    func getSunsetSunriseNoFormatted(currentDate: String, completionHandler: @escaping (Bool, SunNoFormattedAPI?) -> Void) {
-        guard let url = createSunNoFormattedApiUrl(currentDate: currentDate) else { return }
+    func getSunsetSunriseNoFormatted(date: String, completionHandler: @escaping (Bool, SunNoFormattedAPI?) -> Void) {
+        guard let url = createSunNoFormattedApiUrl(date: date) else { return }
         print("getSunsetSunriseNoFormatted :\(url)")
         
         sunSession.request(url: url) { responseData in
@@ -66,8 +66,8 @@ final class SunService {
         }
     }
     
-    private func createSunNoFormattedApiUrl(currentDate: String) -> URL? {
-        guard let url = URL(string: sunSession.urlStringNoFormattedApi + currentDate) else { return nil }
+    private func createSunNoFormattedApiUrl(date: String) -> URL? {
+        guard let url = URL(string: sunSession.urlStringNoFormattedApi + date) else { return nil }
         return url
     }
 }

@@ -56,8 +56,8 @@ extension String {
         formatter.dateFormat = format
         
         // test
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = TimeZone(secondsFromGMT: 2 * 60 * 60)
+//        formatter.locale = Locale(identifier: "en_US_POSIX")
+//        formatter.timeZone = TimeZone(secondsFromGMT: 2 * 60 * 60)
         
         return formatter.date(from: self) ?? Date()
     }

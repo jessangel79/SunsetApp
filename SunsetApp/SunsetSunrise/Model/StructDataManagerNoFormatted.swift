@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 struct StructDataManagerNoFormatted {
-    let sunApiResults: ResultsNoFormattedApi?
+    let sunApiResultsNoFormatted: ResultsNoFormattedApi?
     let currentDate: String
     let tomorrowDate: String
     let realm: Realm?

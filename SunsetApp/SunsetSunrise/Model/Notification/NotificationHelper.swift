@@ -34,4 +34,8 @@ class NotificationHelper {
 //        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(notification.id)"])
         UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["\(notification.id)"])
     }
+    
+//    static func removeAllLocalNotification(_ notification: NotificationModel) {
+//        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+//    }
 }

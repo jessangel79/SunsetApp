@@ -33,9 +33,9 @@ final class DataManager {
     
     func saveDataSunNoFormatted(data: StructDataManagerNoFormatted, oldDateNoFormatted: inout String) {
         let sunNoFormatted = SunNoFormatted()
-        sunNoFormatted.sunset = data.sunApiResults?.sunset ?? ""
-        sunNoFormatted.sunrise = data.sunApiResults?.sunrise ?? ""
-        sunNoFormatted.dayLength = data.sunApiResults?.dayLength ?? 0
+        sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset ?? ""
+        sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise ?? ""
+        sunNoFormatted.dayLength = data.sunApiResultsNoFormatted?.dayLength ?? 0
         sunNoFormatted.currentDate = data.currentDate
         sunNoFormatted.oldDate = data.currentDate
         sunNoFormatted.tomorrowDate = data.tomorrowDate

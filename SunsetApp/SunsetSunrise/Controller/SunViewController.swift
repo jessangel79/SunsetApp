@@ -43,10 +43,10 @@ final class SunViewController: UIViewController {
     private let dataManager = DataManager()
     private let realm = try? Realm()
     private var typeHour: Double = 1.0
-//    private var typeDay = "Today"
     private var tomorrowInDate = Date()
     private var tomorrowNoFormattedInDate = Date()
     private let defaults = UserDefaults.standard
+    private var notificationActive: Bool?
     
     public var completion: ((String, String, Date) -> Void)?
     private var reminds: [NotificationModel] = [NotificationModel]()
@@ -56,14 +56,20 @@ final class SunViewController: UIViewController {
     @IBAction func refreshBarButtonItemTapped(_ sender: UIBarButtonItem) {
         setData()
         getDateNoFormatted()
+        loadUserDefaults()
+        if reminds.isEmpty {
+            reminderImageView.image = #imageLiteral(resourceName: "cancel")
+        } else {
+            reminderImageView.image = #imageLiteral(resourceName: "active")
+        }
     }
     
     @IBAction func activeRemindButtonTapped(_ sender: UIButton) {
-        
+        setAlarm()
     }
     
     @IBAction func cancelRemindButtonTapped(_ sender: UIButton) {
-    
+        deleteReminder()
     }
     
     @IBAction func typeHourSelected(_ sender: UISegmentedControl) {
@@ -92,20 +98,14 @@ final class SunViewController: UIViewController {
         getDates()
         setData()
         getDateNoFormatted()
-//        checkSwitch(type: "Sunset", switchObject: alarmSunsetSwitch)
         
-        // for Realm Studio
-        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)")
-        print("")
-
-        // debug
-        print("oldDate in viewdidload : \(oldDate) - currentDate : \(currentDate)")
-        print("oldDateNoFormatted in viewdidload : \(oldDateNoFormatted) - currentDateNoFormatted : \(currentDateNoFormatted)")
-        print("tomorrowDate in viewdidload : \(tomorrowDate) - tomorrowDateNoFormatted : \(tomorrowDateNoFormatted)")
-        print("")
-
-        debugRealmSun()
-        debugRealmSunNoFormatted()
+        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
+        debug()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadUserDefaults()
     }
     
     // MARK: - Methods
@@ -126,6 +126,15 @@ final class SunViewController: UIViewController {
         let myTypeDay = UserSettings.segmentedTypeDay
         choiceDaySegmentedControl.selectedSegmentIndex = myTypeDay
         
+        let myNotification = UserSettings.notificationActive
+        notificationActive = myNotification
+        
+        if reminds.isEmpty {
+            reminderImageView.image = #imageLiteral(resourceName: "cancel")
+        } else {
+            reminderImageView.image = #imageLiteral(resourceName: "active")
+        }
+        
         guard let sunList = realm?.objects(Sun.self) else { return }
         for sun in sunList {
             typeHour = sun.typeHour
@@ -137,25 +146,38 @@ final class SunViewController: UIViewController {
         switch choiceDay {
         case 0:
             getSunsetSunrise(date: currentDate)
+            getSunsetSunriseNoFormatted(date: currentDate)
+
         default:
             getSunsetSunrise(date: tomorrowDate)
+            getSunsetSunriseNoFormatted(date: tomorrowDate)
+
         }
     }
     
     private func getDates() {
+        getDatesFormatted()
+        getDatesNoFormatted()
+        setTomorrowDates()
+    }
+    
+    private func getDatesFormatted() {
 //        currentDate = "2020-10-01"
         currentDate = currentDate.getCurrentDate(dateFormat: FormatDate.formatted.rawValue)
         guard let sunList = realm?.objects(Sun.self) else { return }
         oldDate = oldDate.getOldDate(sunList: sunList)
-        
+    }
+    
+    private func getDatesNoFormatted() {
 //        currentDateNoFormatted = "2020-10-01T05:44:57+00:00"
         currentDateNoFormatted = currentDateNoFormatted.getCurrentDate(dateFormat: FormatDate.noFormatted.rawValue)
         guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
         oldDateNoFormatted = oldDateNoFormatted.getOldDateNoFormatted(sunNoFormattedList: sunNoFormattedList)
-        
+    }
+    
+    private func setTomorrowDates() {
         tomorrowInDate = currentDate.toDate().addingTimeInterval(24 * 60 * 60)
         tomorrowDate = tomorrowInDate.toString(format: FormatDate.formatted.rawValue)
-        
         tomorrowNoFormattedInDate = currentDateNoFormatted.toDate().addingTimeInterval(24 * 60 * 60)
         tomorrowDateNoFormatted = tomorrowNoFormattedInDate.toString(format: FormatDate.noFormatted.rawValue)
     }
@@ -168,6 +190,7 @@ final class SunViewController: UIViewController {
                                     view: self.baseView)
         } else {
             getSunsetSunrise(date: currentDate)
+            getSunsetSunriseNoFormatted(date: currentDate)
         }
     }
     
@@ -178,30 +201,9 @@ final class SunViewController: UIViewController {
                                     activityIndicator: self.activityIndicator,
                                     view: self.baseView)
         } else {
-            getSunsetSunriseNoFormatted()
+            getSunsetSunriseNoFormatted(date: currentDate)
         }
-        
         debugGetDateNoFormatted()
-    }
-    
-    private func setAlarm(day: String) {
-//        guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
-        var targetDateToday = Date().addingTimeInterval(15)
-        var targetDateTomorrow = Date().addingTimeInterval(30)
-//        for sun in sunNoFormattedList {
-//            targetDateToday = sun.sunset.toDate()
-//            targetDateTomorrow = sun.tomorrowDate.toDate()
-//        }
-        if choiceDaySegmentedControl.selectedSegmentIndex == 0 {
-            let body = "The sun has set. The shutters must be closed !!!"
-            let title = "Bye Bye Sun !"
-            completion?(title, body, targetDateToday)
-        } else {
-            let body = "The sun has set. The shutters must be closed !!!"
-            let title = "Bye Bye Sun !"
-            completion?(title, body, targetDateTomorrow)
-        }
-        activationAlarm()
     }
     
     private func getSunsetSunrise(date: String) {
@@ -238,9 +240,9 @@ final class SunViewController: UIViewController {
         }
     }
     
-    private func getSunsetSunriseNoFormatted() {
+    private func getSunsetSunriseNoFormatted(date: String) {
         dataManager.deleteAllDataSunNoFormatted(realm: realm)
-        sunService.getSunsetSunriseNoFormatted(currentDate: currentDate) { (success, sunApi) in
+        sunService.getSunsetSunriseNoFormatted(date: date) { (success, sunApi) in // currentDate: currentDate
             self.toggleActivityIndicator(shown: false,
                                          activityIndicator: self.activityIndicator,
                                          view: self.baseView)
@@ -248,7 +250,7 @@ final class SunViewController: UIViewController {
                 guard let sunApi = sunApi else { return }
                 if sunApi.status == "OK" {
                     self.sunNoFormattedApiResults = sunApi.results
-                    let data = StructDataManagerNoFormatted(sunApiResults: self.sunNoFormattedApiResults,
+                    let data = StructDataManagerNoFormatted(sunApiResultsNoFormatted: self.sunNoFormattedApiResults,
                                                             currentDate: self.currentDateNoFormatted,
                                                             tomorrowDate: self.tomorrowDateNoFormatted,
                                                             realm: self.realm)
@@ -273,7 +275,6 @@ final class SunViewController: UIViewController {
         if choiceDaySegmentedControl.selectedSegmentIndex == 0 {
             dayLabel.text = FormatDate.today.rawValue // "Today"
             currentDateLabel.text = currentDate.getCurrentDate(dateFormat: FormatDate.toDisplay.rawValue)
-            
         } else {
             dayLabel.text = FormatDate.tomorrow.rawValue // "Tomorrow"
             currentDateLabel.text = tomorrowInDate.toString(format: FormatDate.toDisplay.rawValue)
@@ -301,43 +302,48 @@ final class SunViewController: UIViewController {
             debugSetDataLabels(sunset, sunrise, dayLength, sun)
         }
     }
-    
-    private func checkSwitch(type: String, switchObject: UISwitch) {
-        if switchObject.isOn == true {
-            setAlarm(day: type)
-        }
-        print("checkSwitch : \(switchObject.isOn)")
-    }
 
-    private func createReminder() {
-        completion = { title, body, date in
-            DispatchQueue.main.async {
-                let notificationModel = NotificationModel(title: title, message: body, plannedFor: date)
-                self.reminds.append(notificationModel)
-                NotificationHelper.addLocalNotification(notificationModel)
-            }
+    private func setAlarm() { // day: String
+        var targetDateToday = Date().addingTimeInterval(10)
+        var targetDateTomorrow = Date().addingTimeInterval(15)
+        
+//        guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
+//        for sun in sunNoFormattedList {
+//            targetDateToday = sun.sunset.toDate().addingTimeInterval(1.5 * 60 * 60)
+//            targetDateTomorrow = sun.sunset.toDate().addingTimeInterval(25.5 * 60 * 60)
+//        }
+
+        let choiceDay = choiceDaySegmentedControl.selectedSegmentIndex
+        let title = "Bye Bye Sun !"
+        let body = "- The sun has set. The shutters must be closed !!!"
+//        print("targetDateToday in SetAlarm : \(targetDateToday)")
+//        print("targetDateTomorrow in SetAlarm : \(targetDateTomorrow)")
+        switch choiceDay {
+        case 0:
+            guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
+//            for sun in sunNoFormattedList {
+//                targetDateToday = sun.sunset.toDate().addingTimeInterval(1.5 * 60 * 60)
+//            }
+            let title = title
+            let body = "\(targetDateToday)" + body
+            print("targetDateToday in SetAlarm : \(targetDateToday)")
+            completion?(title, body, targetDateToday)
+        default:
+            guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
+//            for sun in sunNoFormattedList {
+//                targetDateTomorrow = sun.sunset.toDate().addingTimeInterval(1.5 * 60 * 60)
+//            }
+            let title = title
+            let body = "\(targetDateTomorrow)" + body
+            print("targetDateTomorrow in SetAlarm : \(targetDateTomorrow)")
+            completion?(title, body, targetDateTomorrow)
         }
-    }
-    
-    private func deleteReminder() {
-        if reminds.isEmpty {
-            print("no scheduled reminder")
-        } else {
-            reminds.forEach { remind in
-                reminds.removeAll { rem -> Bool in
-                    if remind.id == rem.id {
-                        NotificationHelper.removeLocalNotification(rem)
-                    }
-                    print("rem.id is deleted : \(rem.id)")
-                    print("remind.id is : \(remind.id)")
-                    print("")
-                    return remind.id == rem.id
-                }
-            }
-        }
+        
+        activationAlarm()
     }
     
     private func activationAlarm() {
+        deleteReminder()
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
             if success {
                 self.createReminder()
@@ -346,13 +352,61 @@ final class SunViewController: UIViewController {
             }
         })
     }
+    
+    private func createReminder() {
+        completion = { title, body, date in
+            DispatchQueue.main.async {
+                let notificationModel = NotificationModel(title: title, message: body, plannedFor: date)
+                self.reminds.append(notificationModel)
+                NotificationHelper.addLocalNotification(notificationModel)
+                self.reminderImageView.image = #imageLiteral(resourceName: "active")
+                self.notificationActive = true
+                UserSettings.notificationActive = self.notificationActive ?? true
+            }
+        }
+    }
+    
+    private func deleteReminder() {
+        if reminds.isEmpty {
+            print("no scheduled reminder")
+        } else {
+            reminds.removeAll()
+            self.reminderImageView.image = #imageLiteral(resourceName: "cancel")
+            self.notificationActive = false
+            UserSettings.notificationActive = self.notificationActive ?? false
+
+//            reminds.forEach { remind in
+//                reminds.removeAll { rem -> Bool in
+//                    if remind.id == rem.id {
+//                        NotificationHelper.removeLocalNotification(rem)
+//                    }
+//                    print("rem.id is deleted : \(rem.id)")
+//                    print("remind.id is : \(remind.id)")
+//                    print("")
+//                    return remind.id == rem.id
+//                }
+//            }
+        }
+    }
 }
 
 // MARK: - Debug
 
 extension SunViewController {
     
-    // debug
+    fileprivate func debug() {
+        debugViewDidLoad()
+        debugRealmSun()
+        debugRealmSunNoFormatted()
+    }
+
+    fileprivate func debugViewDidLoad() {
+        print("oldDate in viewdidload : \(oldDate) - currentDate : \(currentDate)")
+        print("oldDateNoFormatted in viewdidload : \(oldDateNoFormatted) - currentDateNoFormatted : \(currentDateNoFormatted)")
+        print("tomorrowDate in viewdidload : \(tomorrowDate) - tomorrowDateNoFormatted : \(tomorrowDateNoFormatted)")
+        print("")
+    }
+
     fileprivate func debugSetDataLabels(_ sunset: String, _ sunrise: String, _ dayLength: String, _ sun: Sun) {
         print("In setDataLabels --- Sun => ")
         print("sunset : \(sunset)")
@@ -366,7 +420,6 @@ extension SunViewController {
         print("")
     }
 
-    // debug
     fileprivate func debugGetDateNoFormatted() {
         guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
         for sun in sunNoFormattedList {
@@ -384,8 +437,7 @@ extension SunViewController {
             print("")
         }
     }
-    
-    // debug
+
     fileprivate func debugRealmSun() {
         guard let sunList = realm?.objects(Sun.self) else { return }
         for sun in sunList {
@@ -404,8 +456,7 @@ extension SunViewController {
             print("")
         }
     }
-    
-    // debug
+
     fileprivate func debugRealmSunNoFormatted() {
         guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
         for sun in sunNoFormattedList {
@@ -424,3 +475,15 @@ extension SunViewController {
         }
     }
 }
+
+// private func setAlarm(day: String) =>
+// todo switch
+//        if choiceDaySegmentedControl.selectedSegmentIndex == 0 {
+//            let body = "The sun has set. The shutters must be closed !!!"
+//            let title = "Bye Bye Sun !"
+//            completion?(title, body, targetDateToday)
+//        } else {
+//            let body = "The sun has set. The shutters must be closed !!!"
+//            let title = "Bye Bye Sun !"
+//            completion?(title, body, targetDateTomorrow)
+//        }
