@@ -19,6 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         })
         Realm.Configuration.defaultConfiguration = config
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("We'll be able to set Reminders!")
+            } else if error != nil {
+                print("error occurred")
+            }
+        }
+        
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
+//            if success {
+//                self.createReminder()
+//                print("reminds array in activationAlarm : \(self.reminds)")
+//            } else if error != nil {
+//                print("error occurred")
+//            }
+//        })
+        
         // deleteRealmIfMigrationNeeded: true
         return true
     }

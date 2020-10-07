@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import NotificationCenter
+//import NotificationCenter
+import UserNotifications
 
 class NotificationHelper {
     static func addLocalNotification(_ notification: NotificationModel) {
-        
         let content = UNMutableNotificationContent()
         content.title = notification.title
         content.sound = .default
@@ -21,7 +21,7 @@ class NotificationHelper {
 
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: targetDate),
-            repeats: true
+            repeats: false
         )
 
         let request = UNNotificationRequest(identifier: "\(notification.id)", content: content, trigger: trigger) // "some_long_id"
@@ -31,11 +31,15 @@ class NotificationHelper {
     
     static func removeLocalNotification(_ notification: NotificationModel) {
         // delete notification with id
-//        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(notification.id)"])
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(notification.id)"])
         UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["\(notification.id)"])
+//        print("notification deleted with id in addLocalNotification : \(notification.id)")
     }
     
-//    static func removeAllLocalNotification(_ notification: NotificationModel) {
-//        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-//    }
+    static func removeAllLocalNotification() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+//        print("All notifications deleted in addLocalNotification")
+
+    }
 }

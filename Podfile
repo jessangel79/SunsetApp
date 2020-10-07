@@ -7,11 +7,11 @@ target 'SunsetApp' do
   use_frameworks!
   
   pod 'SwiftLint'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~> 5.4.8'
   
   target 'SunsetAppTests' do
     inherit! :search_paths
-    # pod 'RealmSwift'
+    # pod 'RealmSwift', '~> 5.0'
   end
 
 end

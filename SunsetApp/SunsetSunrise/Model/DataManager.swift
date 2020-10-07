@@ -73,7 +73,7 @@ final class DataManager {
             print("error : \(error.localizedDescription)")
         }
     }
-    
+
     // debug
     func displaySunCount(realm: Realm?) {
         let sunList = realm?.objects(Sun.self)

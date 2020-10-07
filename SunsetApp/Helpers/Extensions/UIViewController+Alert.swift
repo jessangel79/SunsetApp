@@ -15,6 +15,9 @@ extension UIViewController {
     enum AlertError {
         case error
         case errorAccess
+        case noNotification
+        case notificationActive
+        case notificationDeleted
     }
     
     /// Alert message for user
@@ -29,8 +32,16 @@ extension UIViewController {
         case .errorAccess:
             title = "Error Acces"
             message = "Sorry there is an error to access the calendar."
+        case .noNotification:
+            title = "No notification"
+            message = "Sorry there is no scheduled notification yet !"
+        case .notificationActive:
+            title = "Notification scheduled"
+            message = "A notification has been scheduled"
+        case .notificationDeleted:
+            title = "Notifications deleted"
+            message = "The notifications have been deleted"
         }
-        
         alertError(title, message)
     }
     
@@ -46,7 +57,7 @@ extension UIViewController {
         alertCustomAction(title, message, action: action)
     }
     
-    func presentAlertMapInfo(_ title: String, _ message: String) {
+    func presentAlertAction (_ title: String, _ message: String) {
         let action = UIAlertAction(title: "OK", style: .default)
         alertCustomAction(title, message, action: action)
     }
@@ -56,6 +67,14 @@ extension UIViewController {
         let alert = UIAlertController(title: "Warning Reset All", message: "Are you sure to reset all ?", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(destructiveAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlertAction(action: UIAlertAction) {
+        let alert = UIAlertController(title: "Sunset", message: "Are you sure to activate the notification for sunset time ?", preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(action)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
     }

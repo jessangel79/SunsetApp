@@ -29,10 +29,7 @@ struct UserSettings {
     
     @MyUserDefaults(key: "segmentedTypeDay", defaultValue: 0)
     static var segmentedTypeDay: Int
-    
-    @MyUserDefaults(key: "notificationActive", defaultValue: false)
-    static var notificationActive: Bool
-    
+
 //    static var switchSunset: Bool {
 //        get {
 //            return UserDefaults.standard.object(forKey: "SwitchSunset") as? Bool ?? false

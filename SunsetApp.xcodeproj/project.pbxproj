@@ -16,7 +16,7 @@
 		3A028E2E251CC70D00FC7C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A028E2C251CC70D00FC7C37 /* LaunchScreen.storyboard */; };
 		3A028E39251CC70E00FC7C37 /* SunsetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E38251CC70E00FC7C37 /* SunsetAppTests.swift */; };
 		3A028E44251CC70E00FC7C37 /* SunsetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E43251CC70E00FC7C37 /* SunsetAppUITests.swift */; };
-		3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A028E65251CCBD600FC7C37 /* Alamofire */; };
+		3A028E66251CCBD600FC7C37 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */; };
 		3A221E3925261B7000B9C0C8 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E3825261B7000B9C0C8 /* UNUserNotificationCenter.swift */; };
 		3A221E3E25262AE200B9C0C8 /* StructDataManagerNoFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E3D25262AE200B9C0C8 /* StructDataManagerNoFormatted.swift */; };
 		3A221E4825262E5000B9C0C8 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E4725262E5000B9C0C8 /* NotificationHelper.swift */; };
@@ -41,6 +41,7 @@
 		3AA315F92523A03600B9C19E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA315F82523A03500B9C19E /* DataManager.swift */; };
 		3AA315FE2523A08000B9C19E /* StructDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA315FD2523A08000B9C19E /* StructDataManager.swift */; };
 		3AE2A558251FB425001BE721 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2A557251FB425001BE721 /* Sun.swift */; };
+		3AF53326252CCAE0009B9AF3 /* MyReminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF53325252CCADF009B9AF3 /* MyReminder.swift */; };
 		3AFE77FD25272C6900167208 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE77FC25272C6900167208 /* README.md */; };
 		3AFE7829252733E900167208 /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE7828252733E900167208 /* FormatDate.swift */; };
 		3AFE782E25277C7E00167208 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE782D25277C7D00167208 /* Date.swift */; };
@@ -107,6 +108,7 @@
 		3AA315F82523A03500B9C19E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3AA315FD2523A08000B9C19E /* StructDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDataManager.swift; sourceTree = "<group>"; };
 		3AE2A557251FB425001BE721 /* Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
+		3AF53325252CCADF009B9AF3 /* MyReminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReminder.swift; sourceTree = "<group>"; };
 		3AFE77FC25272C6900167208 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3AFE7828252733E900167208 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
 		3AFE782D25277C7D00167208 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */,
+				3A028E66251CCBD600FC7C37 /* BuildFile in Frameworks */,
 				A151A53C2EE45AD599300464 /* Pods_SunsetApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +262,7 @@
 				3AA315FD2523A08000B9C19E /* StructDataManager.swift */,
 				3A221E3D25262AE200B9C0C8 /* StructDataManagerNoFormatted.swift */,
 				3AFE7828252733E900167208 /* FormatDate.swift */,
+				3AF53325252CCADF009B9AF3 /* MyReminder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,7 +354,7 @@
 				3A028E1B251CC70C00FC7C37 /* Frameworks */,
 				3A028E1C251CC70C00FC7C37 /* Resources */,
 				3A59214C251CD10000D882EA /* ShellScript */,
-				1C508CD169DB9449C11257D6 /* [CP] Embed Pods Frameworks */,
+				25B37697350AE7CC751BA7F4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,7 +362,7 @@
 			);
 			name = SunsetApp;
 			packageProductDependencies = (
-				3A028E65251CCBD600FC7C37 /* Alamofire */,
+				3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */,
 			);
 			productName = SunsetApp;
 			productReference = 3A028E1E251CC70C00FC7C37 /* SunsetApp.app */;
@@ -434,7 +437,7 @@
 			);
 			mainGroup = 3A028E15251CC70C00FC7C37;
 			packageReferences = (
-				3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 3A028E1F251CC70C00FC7C37 /* Products */;
 			projectDirPath = "";
@@ -479,7 +482,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C508CD169DB9449C11257D6 /* [CP] Embed Pods Frameworks */ = {
+		25B37697350AE7CC751BA7F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -579,6 +582,7 @@
 				3A592185251CF28C00D882EA /* SunProtocol.swift in Sources */,
 				3A5921A3251D0EFB00D882EA /* UIViewController+ActivityIndicator.swift in Sources */,
 				3A5921B7251D1AE800D882EA /* String.swift in Sources */,
+				3AF53326252CCAE0009B9AF3 /* MyReminder.swift in Sources */,
 				3A2879DF2524E115009A609E /* SunNoFormattedAPI.swift in Sources */,
 				3A028E24251CC70C00FC7C37 /* SceneDelegate.swift in Sources */,
 				3A592178251CF25900D882EA /* SunSession.swift in Sources */,
@@ -938,7 +942,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -949,9 +953,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A028E65251CCBD600FC7C37 /* Alamofire */ = {
+		3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

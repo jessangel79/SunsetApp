@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct NotificationModel: Identifiable, Hashable {
     let id = UUID()
