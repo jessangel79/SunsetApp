@@ -7,7 +7,6 @@
 
 import UIKit
 import RealmSwift
-//import NotificationCenter
 import UserNotifications
 
 final class SunViewController: UIViewController {
@@ -86,9 +85,6 @@ final class SunViewController: UIViewController {
         customUI()
         NotificationHelper.removeAllLocalNotificationDelivered()
         reminds = [NotificationModel]()
-        if reminds.isEmpty {
-            sunsetSwitch.isOn = false
-        }
         loadUserDefaults()
         checkIfRemindIsActive()
         setSunList()
@@ -98,24 +94,6 @@ final class SunViewController: UIViewController {
         print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
         debug()
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        NotificationHelper.removeAllLocalNotificationDelivered()
-//        reminds = [NotificationModel]()
-//        if reminds.isEmpty {
-//            sunsetSwitch.isOn = false
-//        }
-    
-//        checkIfRemindIsActive()
-//        setAlarm()
-//        loadUserDefaults()
-//        refresh()
-//    }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//    }
     
     // MARK: - Methods
     
@@ -137,7 +115,6 @@ final class SunViewController: UIViewController {
         setData()
         getDates()
         loadUserDefaults()
-//        setAlarm()
         checkIfRemindIsActive()
         sunsetSwitch.isOn = false
         setSunList()
@@ -156,12 +133,11 @@ final class SunViewController: UIViewController {
         case 0:
             getSunsetSunrise(date: currentDate)
             getSunsetSunriseNoFormatted(date: currentDate)
-
         default:
             getSunsetSunrise(date: tomorrowDate)
             getSunsetSunriseNoFormatted(date: tomorrowDate)
-
         }
+        refresh()
     }
     
     private func getDates() {
@@ -308,13 +284,10 @@ extension SunViewController {
     
     private func checkIfRemindIsActive() {
         if sunsetSwitch.isOn {
-//            createReminder()
             createReminderWithAlert()
-
         } else {
             reminds.removeAll()
             NotificationHelper.removeAllLocalNotification()
-//            sunsetSwitch.isOn = false
         }
         print("My reminders in check if :\(reminds)")
     }
@@ -329,36 +302,22 @@ extension SunViewController {
         
         switch choiceDay {
         case 0:
-//            guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
-//            for sun in sunNoFormattedList {
-//                targetDateToday = sun.sunset.toDate().advanced(by: 0.5 * 60 * 60) // .addingTimeInterval(1.5 * 60 * 60)
-//            }
+            guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
+            for sun in sunNoFormattedList {
+                targetDateToday = sun.sunset.toDate().advanced(by: 0.5 * 60 * 60) // .addingTimeInterval(1.5 * 60 * 60)
+            }
             print("targetDateToday in SetAlarm : \(targetDateToday)")
             completion?(title, body, targetDateToday)
         default:
-//            guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
-//            for sun in sunNoFormattedList {
-//                targetDateTomorrow = sun.sunset.toDate().advanced(by: 0.5 * 60 * 60) // .addingTimeInterval(1.5 * 60 * 60)
-//            }
+            guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
+            for sun in sunNoFormattedList {
+                targetDateTomorrow = sun.sunset.toDate().advanced(by: 0.5 * 60 * 60) // .addingTimeInterval(1.5 * 60 * 60)
+            }
             print("targetDateTomorrow in SetAlarm : \(targetDateTomorrow)")
             completion?(title, body, targetDateTomorrow)
         }
-//        createReminderOld()
         createReminderWithAlert()
     }
-    
-//    private func createReminderOld() {
-//        reminds.removeAll()
-//        NotificationHelper.removeAllLocalNotification()
-//        completion = { title, body, date in
-//            DispatchQueue.main.async {
-//                let notificationModel = NotificationModel(title: title, message: body, plannedFor: date)
-//                self.reminds.append(notificationModel)
-//                NotificationHelper.addLocalNotification(notificationModel)
-//                self.presentAlert(typeError: .notificationActive)
-//            }
-//        }
-//    }
     
     private func activateRemind() {
         setAlarm()
@@ -382,18 +341,18 @@ extension SunViewController {
         }
     }
     
-    private func createReminder() {
-        reminds.removeAll()
-        NotificationHelper.removeAllLocalNotification()
-        completion = { title, body, date in
-            DispatchQueue.main.async {
-                let notificationModel = NotificationModel(title: title, message: body, plannedFor: date)
-                self.reminds.append(notificationModel)
-                self.sunsetSwitch.isOn = true
-                NotificationHelper.addLocalNotification(notificationModel)
-            }
-        }
-    }
+//    private func createReminder() {
+//        reminds.removeAll()
+//        NotificationHelper.removeAllLocalNotification()
+//        completion = { title, body, date in
+//            DispatchQueue.main.async {
+//                let notificationModel = NotificationModel(title: title, message: body, plannedFor: date)
+//                self.reminds.append(notificationModel)
+//                self.sunsetSwitch.isOn = true
+//                NotificationHelper.addLocalNotification(notificationModel)
+//            }
+//        }
+//    }
     
     private func deleteAllReminders() {
         if reminds.isEmpty {

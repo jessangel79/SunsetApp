@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("error occurred")
             }
         }
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
         
 //        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
 //            if success {
