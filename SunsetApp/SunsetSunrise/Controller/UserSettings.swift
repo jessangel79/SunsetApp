@@ -29,6 +29,9 @@ struct UserSettings {
     
     @MyUserDefaults(key: "segmentedTypeDay", defaultValue: 0)
     static var segmentedTypeDay: Int
+    
+    @MyUserDefaults(key: "stateSunsetSwitch", defaultValue: false)
+    static var stateSunsetSwitch: Bool
 
 //    static var switchSunset: Bool {
 //        get {

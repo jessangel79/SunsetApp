@@ -40,6 +40,11 @@ class NotificationHelper {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
 //        print("All notifications deleted in addLocalNotification")
-
+    }
+    
+    static func removeAllLocalNotificationDelivered() {
+//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+//        print("All notifications deleted in addLocalNotification")
     }
 }

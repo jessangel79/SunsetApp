@@ -37,10 +37,10 @@ extension UIViewController {
             message = "Sorry there is no scheduled notification yet !"
         case .notificationActive:
             title = "Notification scheduled"
-            message = "A notification has been scheduled"
+            message = "The notification has been scheduled"
         case .notificationDeleted:
-            title = "Notifications deleted"
-            message = "The notifications have been deleted"
+            title = "Notification canceled"
+            message = "The notification have been canceled"
         }
         alertError(title, message)
     }
@@ -64,7 +64,7 @@ extension UIViewController {
     
     /// Alert message for user to confirm all reset
     func showResetAlert(destructiveAction: UIAlertAction) {
-        let alert = UIAlertController(title: "Warning Reset All", message: "Are you sure to reset all ?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Cancel notification", message: "Are you sure to cancel the notification ?", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(destructiveAction)
         alert.addAction(cancelAction)
