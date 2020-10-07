@@ -59,7 +59,7 @@ final class SunViewController: UIViewController {
     
     @IBAction func sunsetButtonClicked(_ sender: UISwitch) {
         sender.isOn ? activateRemind() : cancelRemind()
-//        UserSettings.stateSunsetSwitch = sunsetSwitch.isOn
+        UserSettings.stateSunsetSwitch = sunsetSwitch.isOn
     }
 
     @IBAction func typeHourSelected(_ sender: UISegmentedControl) {
@@ -84,8 +84,11 @@ final class SunViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customUI()
-//        NotificationHelper.removeAllLocalNotificationDelivered()
-//        reminds = [NotificationModel]()
+        NotificationHelper.removeAllLocalNotificationDelivered()
+        reminds = [NotificationModel]()
+        if reminds.isEmpty {
+            sunsetSwitch.isOn = false
+        }
         loadUserDefaults()
         checkIfRemindIsActive()
         setSunList()
@@ -98,6 +101,13 @@ final class SunViewController: UIViewController {
     
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(animated)
+//        NotificationHelper.removeAllLocalNotificationDelivered()
+//        reminds = [NotificationModel]()
+//        if reminds.isEmpty {
+//            sunsetSwitch.isOn = false
+//        }
+    
+//        checkIfRemindIsActive()
 //        setAlarm()
 //        loadUserDefaults()
 //        refresh()
@@ -119,8 +129,8 @@ final class SunViewController: UIViewController {
         choiceHourSegmentedControl.selectedSegmentIndex = myTypeHour
         let myTypeDay = UserSettings.segmentedTypeDay
         choiceDaySegmentedControl.selectedSegmentIndex = myTypeDay
-//        let mySunsetSwitch = UserSettings.stateSunsetSwitch
-//        sunsetSwitch.isOn = mySunsetSwitch
+        let mySunsetSwitch = UserSettings.stateSunsetSwitch
+        sunsetSwitch.isOn = mySunsetSwitch
     }
     
     private func refresh() {
@@ -128,7 +138,8 @@ final class SunViewController: UIViewController {
         getDates()
         loadUserDefaults()
 //        setAlarm()
-//        checkIfRemindIsActive()
+        checkIfRemindIsActive()
+        sunsetSwitch.isOn = false
         setSunList()
     }
  
@@ -289,24 +300,22 @@ final class SunViewController: UIViewController {
             debugSetDataLabels(sunset, sunrise, dayLength, sun)
         }
     }
+}
+
+// MARK: - Reminder
+
+extension SunViewController {
     
     private func checkIfRemindIsActive() {
         if sunsetSwitch.isOn {
-//            setAlarm()
-            createReminder()
-//            reminds.removeAll()
-//            NotificationHelper.removeAllLocalNotification()
-//            completion = { title, body, date in
-//                DispatchQueue.main.async {
-//                    let notificationModel = NotificationModel(title: title, message: body, plannedFor: date)
-//                    self.reminds.append(notificationModel)
-//                    NotificationHelper.addLocalNotification(notificationModel)
-//                }
-//            }
-        } // else {
-//            reminds.removeAll()
-//            NotificationHelper.removeAllLocalNotification()
-//        }
+//            createReminder()
+            createReminderWithAlert()
+
+        } else {
+            reminds.removeAll()
+            NotificationHelper.removeAllLocalNotification()
+//            sunsetSwitch.isOn = false
+        }
         print("My reminders in check if :\(reminds)")
     }
     
@@ -380,6 +389,7 @@ final class SunViewController: UIViewController {
             DispatchQueue.main.async {
                 let notificationModel = NotificationModel(title: title, message: body, plannedFor: date)
                 self.reminds.append(notificationModel)
+                self.sunsetSwitch.isOn = true
                 NotificationHelper.addLocalNotification(notificationModel)
             }
         }
@@ -398,12 +408,6 @@ final class SunViewController: UIViewController {
         }
     }
 }
-
-// MARK: - Reminder
-
-//extension SunViewController {
-
-//}
 
 // MARK: - Debug
 
