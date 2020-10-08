@@ -16,7 +16,7 @@
 		3A028E2E251CC70D00FC7C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A028E2C251CC70D00FC7C37 /* LaunchScreen.storyboard */; };
 		3A028E39251CC70E00FC7C37 /* SunsetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E38251CC70E00FC7C37 /* SunsetAppTests.swift */; };
 		3A028E44251CC70E00FC7C37 /* SunsetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E43251CC70E00FC7C37 /* SunsetAppUITests.swift */; };
-		3A028E66251CCBD600FC7C37 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */; };
+		3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A028E65251CCBD600FC7C37 /* Alamofire */; };
 		3A221E3925261B7000B9C0C8 /* UNUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E3825261B7000B9C0C8 /* UNUserNotificationCenter.swift */; };
 		3A221E3E25262AE200B9C0C8 /* StructDataManagerNoFormatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E3D25262AE200B9C0C8 /* StructDataManagerNoFormatted.swift */; };
 		3A221E4825262E5000B9C0C8 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E4725262E5000B9C0C8 /* NotificationHelper.swift */; };
@@ -26,6 +26,7 @@
 		3A2879C725249A7F009A609E /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A2879C625249A7F009A609E /* ApiKeys.plist */; };
 		3A2879CC25249B01009A609E /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2879CB25249B01009A609E /* ApiKeys.swift */; };
 		3A2879DF2524E115009A609E /* SunNoFormattedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2879DE2524E115009A609E /* SunNoFormattedAPI.swift */; };
+		3A2E7BB5252F37BD007E31E3 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E7BB4252F37BD007E31E3 /* Int.swift */; };
 		3A59214F251CD17700D882EA /* Fake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59214E251CD17700D882EA /* Fake.swift */; };
 		3A592165251CD47000D882EA /* Sun.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A592164251CD47000D882EA /* Sun.storyboard */; };
 		3A592173251CE6C600D882EA /* UIViewController+CustomUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A592172251CE6C600D882EA /* UIViewController+CustomUI.swift */; };
@@ -93,6 +94,7 @@
 		3A2879C625249A7F009A609E /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		3A2879CB25249B01009A609E /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		3A2879DE2524E115009A609E /* SunNoFormattedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunNoFormattedAPI.swift; sourceTree = "<group>"; };
+		3A2E7BB4252F37BD007E31E3 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		3A59214E251CD17700D882EA /* Fake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fake.swift; sourceTree = "<group>"; };
 		3A592164251CD47000D882EA /* Sun.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sun.storyboard; sourceTree = "<group>"; };
 		3A592172251CE6C600D882EA /* UIViewController+CustomUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+CustomUI.swift"; sourceTree = "<group>"; };
@@ -121,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A028E66251CCBD600FC7C37 /* BuildFile in Frameworks */,
+				3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */,
 				A151A53C2EE45AD599300464 /* Pods_SunsetApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +304,7 @@
 				3A5921B6251D1AE800D882EA /* String.swift */,
 				3A221E3825261B7000B9C0C8 /* UNUserNotificationCenter.swift */,
 				3AFE782D25277C7D00167208 /* Date.swift */,
+				3A2E7BB4252F37BD007E31E3 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,7 +365,7 @@
 			);
 			name = SunsetApp;
 			packageProductDependencies = (
-				3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */,
+				3A028E65251CCBD600FC7C37 /* Alamofire */,
 			);
 			productName = SunsetApp;
 			productReference = 3A028E1E251CC70C00FC7C37 /* SunsetApp.app */;
@@ -437,7 +440,7 @@
 			);
 			mainGroup = 3A028E15251CC70C00FC7C37;
 			packageReferences = (
-				3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */,
+				3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3A028E1F251CC70C00FC7C37 /* Products */;
 			projectDirPath = "";
@@ -573,6 +576,7 @@
 				3A221E582526425100B9C0C8 /* SunNoFormatted.swift in Sources */,
 				3A028E26251CC70C00FC7C37 /* SunViewController.swift in Sources */,
 				3A028E22251CC70C00FC7C37 /* AppDelegate.swift in Sources */,
+				3A2E7BB5252F37BD007E31E3 /* Int.swift in Sources */,
 				3AFE782E25277C7E00167208 /* Date.swift in Sources */,
 				3A221E3925261B7000B9C0C8 /* UNUserNotificationCenter.swift in Sources */,
 				3A221E4825262E5000B9C0C8 /* NotificationHelper.swift in Sources */,
@@ -942,7 +946,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */ = {
+		3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -953,9 +957,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3A028E65251CCBD600FC7C37 /* SwiftPackageProductDependency */ = {
+		3A028E65251CCBD600FC7C37 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A028E64251CCBD600FC7C37 /* RemoteSwiftPackageReference */;
+			package = 3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

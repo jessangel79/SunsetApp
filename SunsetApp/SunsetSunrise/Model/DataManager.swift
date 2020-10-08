@@ -10,36 +10,53 @@ import RealmSwift
 
 final class DataManager {
     
-    func saveDataSun(data: StructDataManager, oldDate: inout String, typeHour: Double) {
-        let sun = Sun()
-        sun.sunset = data.sunApiResults?.sunset.date24(typeHour: typeHour) ?? ""
-        sun.sunrise = data.sunApiResults?.sunrise.date24(typeHour: typeHour) ?? ""
-        print("sun.sunset in datamanager \(sun.sunset)")
-        print("sun.sunrise in datamanager \(sun.sunrise)")
-        sun.dayLength = data.sunApiResults?.dayLength ?? ""
-        sun.currentDate = data.currentDate
-        sun.oldDate = data.currentDate
-        sun.tomorrowDate = data.tomorrowDate
-        sun.typeHour = typeHour
-        oldDate = data.currentDate
-        do {
-            try data.realm?.write {
-                data.realm?.add(sun)
-            }
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-    }
+//    func saveDataSun(data: StructDataManager, oldDate: inout String, typeHour: Double) {
+//        let sun = Sun()
+//        sun.sunset = data.sunApiResults?.sunset.date24(typeHour: typeHour) ?? ""
+//        sun.sunrise = data.sunApiResults?.sunrise.date24(typeHour: typeHour) ?? ""
+//        print("sun.sunset in datamanager \(sun.sunset)")
+//        print("sun.sunrise in datamanager \(sun.sunrise)")
+//        sun.dayLength = data.sunApiResults?.dayLength ?? ""
+//        sun.currentDate = data.currentDate
+//        sun.oldDate = data.currentDate
+//        sun.tomorrowDate = data.tomorrowDate
+//        sun.typeHour = typeHour
+//        oldDate = data.currentDate
+//        do {
+//            try data.realm?.write {
+//                data.realm?.add(sun)
+//            }
+//        } catch let error as NSError {
+//            print(error.localizedDescription)
+//        }
+//    }
     
     func saveDataSunNoFormatted(data: StructDataManagerNoFormatted, oldDateNoFormatted: inout String) {
         let sunNoFormatted = SunNoFormatted()
-        sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset ?? ""
-        sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise ?? ""
-        sunNoFormatted.dayLength = data.sunApiResultsNoFormatted?.dayLength ?? 0
+//
+//        var sunsetHour = data.sunApiResultsNoFormatted?.sunset.transformDateInHour()
+//        var sunriseHour = data.sunApiResultsNoFormatted?.sunrise.transformDateInHour()
+//        let sunsetHourInDate = data.sunApiResultsNoFormatted?.sunset.toDate()
+//        let sunriseHourInDate = data.sunApiResultsNoFormatted?.sunrise.toDate()
+//        sunsetHour = sunsetHourInDate?.toString(format: "H:mm:ss")
+//        sunriseHour = sunriseHourInDate?.toString(format: "H:mm:ss")
+//        sunNoFormatted.sunset = sunsetHour ?? ""
+//        sunNoFormatted.sunrise = sunriseHour ?? ""
+        
+        sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset.transformHour() ?? ""
+        sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise.transformHour() ?? ""
+        
+//        sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset.transformDateInHour() ?? ""
+//        sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise.transformDateInHour() ?? ""
+        
+        sunNoFormatted.dayLength = data.sunApiResultsNoFormatted?.dayLength.convertSecondsInHours() ?? ""
+        
+//        sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset ?? ""
+//        sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise ?? ""
+//        sunNoFormatted.dayLength = data.sunApiResultsNoFormatted?.dayLength ?? 0
         sunNoFormatted.currentDate = data.currentDate
         sunNoFormatted.oldDate = data.currentDate
         sunNoFormatted.tomorrowDate = data.tomorrowDate
-//        sunNoFormatted.typeHour = typeHour
         oldDateNoFormatted = data.currentDate
         do {
             try data.realm?.write {
@@ -52,19 +69,19 @@ final class DataManager {
     
     func deleteAllDataSun(realm: Realm?) {
         realm?.beginWrite()
-        realm?.delete((realm?.objects(Sun.self))!)
-        try? realm?.commitWrite()
-    }
-    
-    func deleteAllDataSunNoFormatted(realm: Realm?) {
-        realm?.beginWrite()
         realm?.delete((realm?.objects(SunNoFormatted.self))!)
         try? realm?.commitWrite()
     }
     
+//    func deleteAllDataSunNoFormatted(realm: Realm?) {
+//        realm?.beginWrite()
+//        realm?.delete((realm?.objects(SunNoFormatted.self))!)
+//        try? realm?.commitWrite()
+//    }
+    
     func deleteDataSun(realm: Realm?) {
         do {
-            let sunList = (realm?.objects(Sun.self))!
+            let sunList = (realm?.objects(SunNoFormatted.self))!
             try realm?.write {
                 realm?.delete(sunList)
             }
@@ -76,7 +93,7 @@ final class DataManager {
 
     // debug
     func displaySunCount(realm: Realm?) {
-        let sunList = realm?.objects(Sun.self)
+        let sunList = realm?.objects(SunNoFormatted.self)
         print("il y a \(String(describing: sunList?.count)) Sun dans la liste")
     }
 }

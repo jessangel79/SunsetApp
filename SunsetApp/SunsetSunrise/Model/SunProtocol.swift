@@ -44,13 +44,12 @@ extension SunProtocol {
 //    }
 
     /// url  for API to get sunset, surise and lengthday
-    var urlStringApi: String {
-        return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&date="
-//        return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&\(date)"
-    }
+//    var urlStringApi: String {
+//        return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&date="
+//    }
     
     /// url  for API to get sunset, surise and lengthday with date not formatted
-    var urlStringNoFormattedApi: String {
+    var urlStringApi: String { // urlStringNoFormattedApi
         return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&\(noFormatted)&date="
     }
     

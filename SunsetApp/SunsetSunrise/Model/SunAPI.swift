@@ -11,17 +11,17 @@
 import Foundation
 
 // MARK: - SunAPI
-struct SunAPI: Decodable {
-    let results: ResultsApi
-    let status: String
-}
+//struct SunAPI: Decodable {
+//    let results: ResultsApi
+//    let status: String
+//}
 
 // MARK: - Results
-struct ResultsApi: Decodable {
-    let sunrise, sunset, dayLength: String
-
-    enum CodingKeys: String, CodingKey {
-        case sunrise, sunset
-        case dayLength = "day_length"
-    }
-}
+//struct ResultsApi: Decodable {
+//    let sunrise, sunset, dayLength: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case sunrise, sunset
+//        case dayLength = "day_length"
+//    }
+//}

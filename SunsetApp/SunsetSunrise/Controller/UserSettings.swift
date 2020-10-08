@@ -23,9 +23,6 @@ struct MyUserDefaults<DataType> {
 }
 
 struct UserSettings {
-
-    @MyUserDefaults(key: "segmentedTypeHour", defaultValue: 0)
-    static var segmentedTypeHour: Int
     
     @MyUserDefaults(key: "segmentedTypeDay", defaultValue: 0)
     static var segmentedTypeDay: Int

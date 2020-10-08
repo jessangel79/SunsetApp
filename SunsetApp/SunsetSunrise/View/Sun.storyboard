@@ -48,7 +48,7 @@
                                 <color key="color" systemColor="systemIndigoColor"/>
                             </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="N4k-da-eRH">
-                                <rect key="frame" x="50" y="64" width="220" height="333"/>
+                                <rect key="frame" x="50" y="64" width="220" height="289"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXj-U0-dpe">
                                         <rect key="frame" x="0.0" y="0.0" width="220" height="65.5"/>
@@ -88,19 +88,8 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Aad-uJ-VCh">
-                                        <rect key="frame" x="0.0" y="113" width="220" height="32"/>
-                                        <segments>
-                                            <segment title="Winter Hour"/>
-                                            <segment title="Summer Hour"/>
-                                        </segments>
-                                        <color key="selectedSegmentTintColor" systemColor="systemIndigoColor"/>
-                                        <connections>
-                                            <action selector="typeHourSelected:" destination="As8-Wt-vOX" eventType="valueChanged" id="cPb-LF-X82"/>
-                                        </connections>
-                                    </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3Pa-hF-UNI">
-                                        <rect key="frame" x="0.0" y="157" width="220" height="50"/>
+                                        <rect key="frame" x="0.0" y="113" width="220" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise" translatesAutoresizingMaskIntoConstraints="NO" id="rTA-ck-87v">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -118,7 +107,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yoF-ea-M3o">
-                                        <rect key="frame" x="0.0" y="220" width="220" height="50"/>
+                                        <rect key="frame" x="0.0" y="176" width="220" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset" translatesAutoresizingMaskIntoConstraints="NO" id="yMK-RM-cDj">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -136,7 +125,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-Q6-NRZ">
-                                        <rect key="frame" x="0.0" y="283" width="220" height="50"/>
+                                        <rect key="frame" x="0.0" y="239" width="220" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="day-and-night" translatesAutoresizingMaskIntoConstraints="NO" id="4Tw-Bo-hg4">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -223,7 +212,6 @@
                         <outlet property="alarmView" destination="uXj-U0-dpe" id="W23-Jf-LvC"/>
                         <outlet property="baseView" destination="49n-Ac-Tdp" id="MSN-If-vfx"/>
                         <outlet property="choiceDaySegmentedControl" destination="jaK-vN-lg3" id="IcR-xT-rBO"/>
-                        <outlet property="choiceHourSegmentedControl" destination="Aad-uJ-VCh" id="3Aj-4U-EAP"/>
                         <outlet property="currentDateLabel" destination="GA5-U4-BKh" id="TqR-my-muJ"/>
                         <outlet property="dayLabel" destination="lff-nm-tU7" id="kFt-bA-8R1"/>
                         <outlet property="dayLengthLabel" destination="QZN-PI-ndn" id="YUZ-XM-nXI"/>
