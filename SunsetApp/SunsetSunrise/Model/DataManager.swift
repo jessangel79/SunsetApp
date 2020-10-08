@@ -33,27 +33,9 @@ final class DataManager {
     
     func saveDataSunNoFormatted(data: StructDataManagerNoFormatted, oldDateNoFormatted: inout String) {
         let sunNoFormatted = SunNoFormatted()
-//
-//        var sunsetHour = data.sunApiResultsNoFormatted?.sunset.transformDateInHour()
-//        var sunriseHour = data.sunApiResultsNoFormatted?.sunrise.transformDateInHour()
-//        let sunsetHourInDate = data.sunApiResultsNoFormatted?.sunset.toDate()
-//        let sunriseHourInDate = data.sunApiResultsNoFormatted?.sunrise.toDate()
-//        sunsetHour = sunsetHourInDate?.toString(format: "H:mm:ss")
-//        sunriseHour = sunriseHourInDate?.toString(format: "H:mm:ss")
-//        sunNoFormatted.sunset = sunsetHour ?? ""
-//        sunNoFormatted.sunrise = sunriseHour ?? ""
-        
         sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset.transformHour() ?? ""
         sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise.transformHour() ?? ""
-        
-//        sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset.transformDateInHour() ?? ""
-//        sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise.transformDateInHour() ?? ""
-        
         sunNoFormatted.dayLength = data.sunApiResultsNoFormatted?.dayLength.convertSecondsInHours() ?? ""
-        
-//        sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset ?? ""
-//        sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise ?? ""
-//        sunNoFormatted.dayLength = data.sunApiResultsNoFormatted?.dayLength ?? 0
         sunNoFormatted.currentDate = data.currentDate
         sunNoFormatted.oldDate = data.currentDate
         sunNoFormatted.tomorrowDate = data.tomorrowDate
