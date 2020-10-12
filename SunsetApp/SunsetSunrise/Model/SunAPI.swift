@@ -1,23 +1,23 @@
 //
-//  SunNoFormattedAPI.swift
+//  SunAPI.swift
 //  SunsetApp
 //
 //  Created by Angelique Babin on 30/09/2020.
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
 // To parse the JSON, add this file to your project and do:
 //
-//   let sunNoFormattedAPI = try? newJSONDecoder().decode(SunNoFormattedAPI.self, from: jsonData)
+//   let sunAPI = try? newJSONDecoder().decode(SunAPI.self, from: jsonData)
 
 import Foundation
 
-// MARK: - SunNoFormattedAPI
-struct SunNoFormattedAPI: Decodable {
-    let results: ResultsNoFormattedApi
+// MARK: - SunAPI
+struct SunAPI: Decodable {
+    let results: ResultsApi
     let status: String
 }
 
 // MARK: - Results
-struct ResultsNoFormattedApi: Decodable {
+struct ResultsApi: Decodable {
     let sunrise, sunset: String
     let dayLength: Int
 

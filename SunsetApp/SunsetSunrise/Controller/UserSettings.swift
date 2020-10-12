@@ -29,22 +29,22 @@ struct UserSettings {
     
     @MyUserDefaults(key: "stateSunsetSwitch", defaultValue: false)
     static var stateSunsetSwitch: Bool
-
-//    static var switchSunset: Bool {
+    
+//    static var segmentedTypeDay: Int {
 //        get {
-//            return UserDefaults.standard.object(forKey: "SwitchSunset") as? Bool ?? false
+//            return UserDefaults.standard.object(forKey: "SegmentedTypeDay") as? Int ?? 0
 //        }
 //        set {
-//            UserDefaults.standard.set(newValue, forKey: "SwitchSunset")
+//            UserDefaults.standard.set(newValue, forKey: "SegmentedTypeDay")
 //        }
 //    }
-    
-//    static var segmentedTypeHour: Int {
+
+//    static var stateSunsetSwitch: Bool {
 //        get {
-//            return UserDefaults.standard.object(forKey: "SegmentedTypeHour") as? Int ?? 0
+//            return UserDefaults.standard.object(forKey: "StateSunsetSwitch") as? Bool ?? false
 //        }
 //        set {
-//            UserDefaults.standard.set(newValue, forKey: "SegmentedTypeHour")
+//            UserDefaults.standard.set(newValue, forKey: "StateSunsetSwitch")
 //        }
 //    }
     

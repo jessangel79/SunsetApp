@@ -10,45 +10,8 @@ import RealmSwift
 
 extension String {
     
-    /// convert am / pm time in 24 hour format
-//    func date24() -> String {
-//        let dateAsString = self // "6:35 PM"
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "h:mm:ss a"
-//        let date = dateFormatter.date(from: dateAsString)
-//        dateFormatter.dateFormat = "H:mm:ss"
-//        let date24 = dateFormatter.string(from: date ?? Date())
-//        return date24
-//    }
-    
-    /// convert am / pm time in 24 hour format
-    func dateFormat() -> String {
-        let dateAsString = self // 2020-10-08
-        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "h:mm:ss"
-        let date = dateFormatter.date(from: dateAsString)
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateFormat = dateFormatter.string(from: date ?? Date())
-        return dateFormat
-    }
-    
-    /// transform date no formatted in hour, minute and second
-//    private func transformDateInHour() -> String {
-//        var dateTemp = ""
-//        let initialString = self
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-//
-//        if let date = dateFormatter.date(from: initialString) {
-//            let calendar = Calendar.current
-//            let dateComponents = calendar.dateComponents([.hour, .minute, .second], from: date)
-//            dateTemp = "\(dateComponents.hour ?? 0):\(dateComponents.minute ?? 0):\(dateComponents.second ?? 0)"
-//        }
-//        return dateTemp
-//    }
-    
+    /// transform date in hour
     func transformHour() -> String {
-//        var hourTemp = self.transformDateInHour()
         let hourTempInDate = self.toDate()
         let hourTemp = hourTempInDate.toString(format: "H:mm:ss")
         return hourTemp
@@ -79,7 +42,7 @@ extension String {
     }
     
     /// get old date
-    func getOldDate(sunList: Results<SunNoFormatted>) -> String {
+    func getOldDate(sunList: Results<Sun>) -> String {
         var oldDateTemp = ""
         for sun in sunList {
             oldDateTemp = sun.oldDate.transformDate()
@@ -90,7 +53,7 @@ extension String {
     }
     
     /// format type string in type date
-    func toDate(format: String = "yyyy-MM-dd'T'HH:mm:ssZZZZZ") -> Date { // 2020-09-30 15:32:00 +0000 // FormatDate.noFormatted.rawValue
+    func toDate(format: String = "yyyy-MM-dd'T'HH:mm:ssZZZZZ") -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.date(from: self) ?? Date()

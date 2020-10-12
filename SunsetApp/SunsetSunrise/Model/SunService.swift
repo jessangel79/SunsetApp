@@ -19,8 +19,8 @@ final class SunService {
     
     // MARK: - Methods
     
-    func getSunsetSunriseNoFormatted(date: String, completionHandler: @escaping (Bool, SunNoFormattedAPI?) -> Void) {
-        guard let url = createSunNoFormattedApiUrl(date: date) else { return }
+    func getSunsetSunrise(date: String, completionHandler: @escaping (Bool, SunAPI?) -> Void) {
+        guard let url = createSunApiUrl(date: date) else { return }
         print("getSunsetSunriseNoFormatted :\(url)")
         
         sunSession.request(url: url) { responseData in
@@ -32,7 +32,7 @@ final class SunService {
                 completionHandler(false, nil)
                 return
             }
-            guard let sunApi = try? JSONDecoder().decode(SunNoFormattedAPI.self, from: jsonData) else {
+            guard let sunApi = try? JSONDecoder().decode(SunAPI.self, from: jsonData) else {
                 completionHandler(false, nil)
                 return
             }
@@ -40,7 +40,7 @@ final class SunService {
         }
     }
     
-    private func createSunNoFormattedApiUrl(date: String) -> URL? {
+    private func createSunApiUrl(date: String) -> URL? {
         guard let url = URL(string: sunSession.urlStringApi + date) else { return nil }
         return url
     }

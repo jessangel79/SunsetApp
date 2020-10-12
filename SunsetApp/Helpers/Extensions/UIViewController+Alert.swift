@@ -14,7 +14,6 @@ extension UIViewController {
     /// Enumeration of the error
     enum AlertError {
         case error
-        case errorAccess
         case noNotification
         case notificationActive
         case notificationDeleted
@@ -29,9 +28,6 @@ extension UIViewController {
         case .error:
             title = "Error"
             message = "Sorry an error is occured."
-        case .errorAccess:
-            title = "Error Acces"
-            message = "Sorry there is an error to access the calendar."
         case .noNotification:
             title = "No notification"
             message = "Sorry there is no scheduled notification yet !"
@@ -55,27 +51,5 @@ extension UIViewController {
     private func alertError(_ title: String, _ message: String) {
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertCustomAction(title, message, action: action)
-    }
-    
-    func presentAlertAction (_ title: String, _ message: String) {
-        let action = UIAlertAction(title: "OK", style: .default)
-        alertCustomAction(title, message, action: action)
-    }
-    
-    /// Alert message for user to confirm all reset
-    func showResetAlert(destructiveAction: UIAlertAction) {
-        let alert = UIAlertController(title: "Cancel notification", message: "Are you sure to cancel the notification ?", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(destructiveAction)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
-    }
-    
-    func showAlertAction(action: UIAlertAction) {
-        let alert = UIAlertController(title: "Sunset", message: "Are you sure to activate the notification for sunset time ?", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(action)
-        alert.addAction(cancelAction)
-        present(alert, animated: true, completion: nil)
     }
 }
