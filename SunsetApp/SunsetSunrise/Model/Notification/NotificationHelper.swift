@@ -15,7 +15,7 @@ class NotificationHelper {
         content.sound = .default
         content.body = notification.message
 
-        let targetDate = notification.plannedFor // date
+        let targetDate = notification.plannedFor
         print("target Date createReminder : \(targetDate)")
 
         let trigger = UNCalendarNotificationTrigger(
@@ -38,12 +38,11 @@ class NotificationHelper {
     static func removeAllLocalNotification() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-//        print("All notifications deleted in addLocalNotification")
+//        print("All Pending Notifications deleted")
     }
     
     static func removeAllLocalNotificationDelivered() {
-//        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-//        print("All notifications deleted in addLocalNotification")
+//        print("All Delivered Notifications deleted")
     }
 }

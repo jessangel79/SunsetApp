@@ -39,17 +39,8 @@ extension SunProtocol {
         return "formatted=0"
     }
 
-//    var date: String {
-//        return "date=today"
-//    }
-
-    /// url  for API to get sunset, surise and lengthday
-//    var urlStringApi: String {
-//        return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&date="
-//    }
-    
     /// url  for API to get sunset, surise and lengthday with date not formatted
-    var urlStringApi: String { // urlStringNoFormattedApi
+    var urlStringApi: String {
         return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&\(noFormatted)&date="
     }
     

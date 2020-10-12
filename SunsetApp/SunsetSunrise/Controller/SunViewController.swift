@@ -66,7 +66,7 @@ final class SunViewController: UIViewController {
         default:
             getSunsetSunriseNoFormatted(date: tomorrowDate)
         }
-//        refresh()
+        sunsetSwitch.isOn = false
     }
     
     // MARK: - View Life Cycle
@@ -230,9 +230,15 @@ extension SunViewController {
     }
     
     private func setAlarm() {
-        var targetDateToday = Date().addingTimeInterval(15)
-        var targetDateTomorrow = Date().addingTimeInterval(20)
-
+//        var targetDateToday = Date().addingTimeInterval(15)
+//        var targetDateTomorrow = Date().addingTimeInterval(20)
+        
+//        let testDate = "2020-10-13T17:04:05+00:00"
+//        var targetDateToday = testDate.toDate().addingTimeInterval(15)
+//        var targetDateTomorrow = testDate.toDate().addingTimeInterval(20)
+        var targetDateToday = Date()
+        var targetDateTomorrow = Date()
+        
         let choiceDay = choiceDaySegmentedControl.selectedSegmentIndex
         let title = "Bye Bye Sun !"
         let body = "The sun has set. The shutters must be closed !!!"
@@ -241,14 +247,17 @@ extension SunViewController {
         case 0:
             guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
             for sun in sunNoFormattedList {
-                targetDateToday = sun.sunset.toDate() // .advanced(by: 0.5 * 60 * 60) // .addingTimeInterval(1.5 * 60 * 60)
+                targetDateToday = sun.sunsetNoFormatted.toDate() // .advanced(by: 0.5 * 60 * 60) // .addingTimeInterval(1.5 * 60 * 60)
+                print("Case 0 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
+
             }
             print("targetDateToday in SetAlarm : \(targetDateToday)")
             completion?(title, body, targetDateToday)
         default:
             guard let sunNoFormattedList = realm?.objects(SunNoFormatted.self) else { return }
             for sun in sunNoFormattedList {
-                targetDateTomorrow = sun.sunset.toDate() // .advanced(by: 0.5 * 60 * 60) // .addingTimeInterval(1.5 * 60 * 60)
+                targetDateTomorrow = sun.sunsetNoFormatted.toDate() // .advanced(by: 0.5 * 60 * 60) // .addingTimeInterval(1.5 * 60 * 60)
+                print("Case 1 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
             }
             print("targetDateTomorrow in SetAlarm : \(targetDateTomorrow)")
             completion?(title, body, targetDateTomorrow)

@@ -33,7 +33,6 @@
 		3A592178251CF25900D882EA /* SunSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A592177251CF25800D882EA /* SunSession.swift */; };
 		3A59217D251CF27600D882EA /* SunService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59217C251CF27600D882EA /* SunService.swift */; };
 		3A592185251CF28C00D882EA /* SunProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A592184251CF28C00D882EA /* SunProtocol.swift */; };
-		3A59218A251CF2A700D882EA /* SunAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A592189251CF2A700D882EA /* SunAPI.swift */; };
 		3A59219E251D0E2300D882EA /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59219D251D0E2300D882EA /* UIViewController+Alert.swift */; };
 		3A5921A3251D0EFB00D882EA /* UIViewController+ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5921A2251D0EFB00D882EA /* UIViewController+ActivityIndicator.swift */; };
 		3A5921A8251D101800D882EA /* Informations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A5921A7251D101800D882EA /* Informations.storyboard */; };
@@ -101,7 +100,6 @@
 		3A592177251CF25800D882EA /* SunSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunSession.swift; sourceTree = "<group>"; };
 		3A59217C251CF27600D882EA /* SunService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunService.swift; sourceTree = "<group>"; };
 		3A592184251CF28C00D882EA /* SunProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunProtocol.swift; sourceTree = "<group>"; };
-		3A592189251CF2A700D882EA /* SunAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunAPI.swift; sourceTree = "<group>"; };
 		3A59219D251D0E2300D882EA /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		3A5921A2251D0EFB00D882EA /* UIViewController+ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ActivityIndicator.swift"; sourceTree = "<group>"; };
 		3A5921A7251D101800D882EA /* Informations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Informations.storyboard; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				3A592177251CF25800D882EA /* SunSession.swift */,
 				3A59217C251CF27600D882EA /* SunService.swift */,
 				3A592184251CF28C00D882EA /* SunProtocol.swift */,
-				3A592189251CF2A700D882EA /* SunAPI.swift */,
 				3A2879DE2524E115009A609E /* SunNoFormattedAPI.swift */,
 				3AE2A557251FB425001BE721 /* Sun.swift */,
 				3A221E572526425100B9C0C8 /* SunNoFormatted.swift */,
@@ -591,7 +588,6 @@
 				3A028E24251CC70C00FC7C37 /* SceneDelegate.swift in Sources */,
 				3A592178251CF25900D882EA /* SunSession.swift in Sources */,
 				3A592173251CE6C600D882EA /* UIViewController+CustomUI.swift in Sources */,
-				3A59218A251CF2A700D882EA /* SunAPI.swift in Sources */,
 				3A5921AF251D109100D882EA /* InformationsViewController.swift in Sources */,
 				3A2879CC25249B01009A609E /* ApiKeys.swift in Sources */,
 				3A221E4D25262E7D00B9C0C8 /* NotificationModel.swift in Sources */,

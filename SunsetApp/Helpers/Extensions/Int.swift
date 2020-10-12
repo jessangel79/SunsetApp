@@ -15,7 +15,7 @@ extension Int {
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .positional
         guard let formattedString = formatter.string(from: TimeInterval(self)) else { return "" }
-        print(formattedString)
+//        print(formattedString)
         return formattedString
     }
 }

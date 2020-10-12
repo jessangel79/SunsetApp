@@ -36,6 +36,10 @@ final class DataManager {
         sunNoFormatted.sunset = data.sunApiResultsNoFormatted?.sunset.transformHour() ?? ""
         sunNoFormatted.sunrise = data.sunApiResultsNoFormatted?.sunrise.transformHour() ?? ""
         sunNoFormatted.dayLength = data.sunApiResultsNoFormatted?.dayLength.convertSecondsInHours() ?? ""
+        
+        sunNoFormatted.sunsetNoFormatted = data.sunApiResultsNoFormatted?.sunset ?? ""
+        sunNoFormatted.sunriseNoFormatted = data.sunApiResultsNoFormatted?.sunrise ?? ""
+
         sunNoFormatted.currentDate = data.currentDate
         sunNoFormatted.oldDate = data.currentDate
         sunNoFormatted.tomorrowDate = data.tomorrowDate
