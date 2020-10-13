@@ -52,6 +52,9 @@ final class SunViewController: UIViewController {
     
     @IBAction func sunsetButtonClicked(_ sender: UISwitch) {
         sender.isOn ? activateRemind() : cancelRemind()
+        if !sender.isOn {
+            presentAlert(typeError: .notificationDeleted)
+        }
         UserSettings.stateSunsetSwitch = sunsetSwitch.isOn
     }
     
@@ -63,7 +66,6 @@ final class SunViewController: UIViewController {
         default:
             getSunsetSunriseNoFormatted(date: tomorrowDate)
         }
-        sunsetSwitch.isOn = false
     }
     
     // MARK: - View Life Cycle
@@ -97,11 +99,13 @@ final class SunViewController: UIViewController {
     }
     
     private func refresh() {
-        setData()
         getDates()
-        loadUserDefaults()
+        setData()
+        if sunsetSwitch.isOn {
+            sunsetSwitch.isOn = false
+            presentAlert(typeError: .notificationDeleted)
+        }
         checkIfRemindIsActive()
-        sunsetSwitch.isOn = false
     }
     
     private func getDates() {
@@ -164,6 +168,7 @@ final class SunViewController: UIViewController {
                                                  realm: self.realm)
                     self.dataManager.saveDataSun(data: data, oldDateNoFormatted: &self.oldDateNoFormatted)
                     self.dataManager.displaySunCount(realm: self.realm)
+                    self.sunsetSwitch.isOn ? self.activateRemind() : self.cancelRemind()
                 } else {
                     self.presentAlert(typeError: .error)
                     self.toggleActivityIndicator(shown: false,
@@ -239,17 +244,17 @@ extension SunViewController {
             guard let sunNoFormattedList = realm?.objects(Sun.self) else { return }
             for sun in sunNoFormattedList {
                 targetDateToday = sun.sunsetNoFormatted.toDate() // .addingTimeInterval(1.5 * 60 * 60) // .advanced(by: 0.5 * 60 * 60)
-//                print("Case 0 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
+                print("Case 0 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
             }
-//            print("targetDateToday in SetAlarm : \(targetDateToday)")
+            print("targetDateToday in SetAlarm : \(targetDateToday)")
             completion?(title, body, targetDateToday)
         default:
             guard let sunNoFormattedList = realm?.objects(Sun.self) else { return }
             for sun in sunNoFormattedList {
                 targetDateTomorrow = sun.sunsetNoFormatted.toDate()
-//                print("Case 1 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
+                print("Case 1 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
             }
-//            print("targetDateTomorrow in SetAlarm : \(targetDateTomorrow)")
+            print("targetDateTomorrow in SetAlarm : \(targetDateTomorrow)")
             completion?(title, body, targetDateTomorrow)
         }
         createReminderWithAlert()
@@ -277,16 +282,10 @@ extension SunViewController {
     }
     
     private func deleteAllReminders() {
-        if reminds.isEmpty {
-            print("no scheduled reminder")
-            presentAlert(typeError: .noNotification)
-        } else {
-            reminds.removeAll()
-            NotificationHelper.removeAllLocalNotification()
-            print("all reminders deleted")
-            sunsetSwitch.isOn = false
-            presentAlert(typeError: .notificationDeleted)
-        }
+        reminds.removeAll()
+        NotificationHelper.removeAllLocalNotification()
+        print("all reminders deleted")
+        sunsetSwitch.isOn = false
     }
 }
 

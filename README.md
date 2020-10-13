@@ -10,6 +10,6 @@ Application with a free API that provides sunset and sunrise times for a given l
 
 https://sunrise-sunset.org/api
 
-| Sun | - |
+| Sun - Light mode | Sun - Dark mode |
 | -------- | ------------- |
-|![Sun](source/images/sun.png) |  |
+|![Sun](source/images/sunLight.png) |![Sun](source/images/sunDark.png) |
