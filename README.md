@@ -12,4 +12,4 @@ https://sunrise-sunset.org/api
 
 | Sun - Light mode | Sun - Dark mode |
 | -------- | ------------- |
-|![Sun](source/images/sunLight.png) |![Sun](source/images/sunDark.png) |
+|![Sun Light](source/images/sunLight.png) |![Sun Dark](source/images/sunDark.png) |
