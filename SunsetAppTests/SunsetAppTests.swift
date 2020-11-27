@@ -29,5 +29,14 @@ class SunsetAppTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+//    func test() throws {
+//        let myData = [1, 2, 3]
+//
+//        let first = try XCTUnwrap(myData.first)
+// //        let first = myData.first!
+//
+//        XCTAssert(first < 3)
+//    }
 
 }

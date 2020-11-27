@@ -244,17 +244,17 @@ extension SunViewController {
             guard let sunNoFormattedList = realm?.objects(Sun.self) else { return }
             for sun in sunNoFormattedList {
                 targetDateToday = sun.sunsetNoFormatted.toDate() // .addingTimeInterval(1.5 * 60 * 60) // .advanced(by: 0.5 * 60 * 60)
-                print("Case 0 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
+//                print("Case 0 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
             }
-            print("targetDateToday in SetAlarm : \(targetDateToday)")
+//            print("targetDateToday in SetAlarm : \(targetDateToday)")
             completion?(title, body, targetDateToday)
         default:
             guard let sunNoFormattedList = realm?.objects(Sun.self) else { return }
             for sun in sunNoFormattedList {
                 targetDateTomorrow = sun.sunsetNoFormatted.toDate()
-                print("Case 1 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
+//                print("Case 1 - sun.sunsetNoFormatted.toDate() in setAlarm => \(sun.sunsetNoFormatted.toDate())")
             }
-            print("targetDateTomorrow in SetAlarm : \(targetDateTomorrow)")
+//            print("targetDateTomorrow in SetAlarm : \(targetDateTomorrow)")
             completion?(title, body, targetDateTomorrow)
         }
         createReminderWithAlert()

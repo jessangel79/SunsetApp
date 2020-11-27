@@ -101,6 +101,7 @@
 		3A5921AE251D109100D882EA /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
 		3A5921B6251D1AE800D882EA /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		3AA315F82523A03500B9C19E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3AFA23BD257131A400BB7938 /* SunsetApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SunsetApp.entitlements; sourceTree = "<group>"; };
 		3AFE77FC25272C6900167208 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3AFE7828252733E900167208 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
 		3AFE782D25277C7D00167208 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		3A028E20251CC70C00FC7C37 /* SunsetApp */ = {
 			isa = PBXGroup;
 			children = (
+				3AFA23BD257131A400BB7938 /* SunsetApp.entitlements */,
 				3A028E27251CC70C00FC7C37 /* Main.storyboard */,
 				3A59215B251CD24400D882EA /* SunsetSunrise */,
 				3A59215F251CD2FC00D882EA /* Informations */,
@@ -754,6 +756,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SunsetApp/SunsetApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -767,6 +770,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.angelappdev.SunsetApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -778,6 +782,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SunsetApp/SunsetApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -791,6 +796,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.angelappdev.SunsetApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
