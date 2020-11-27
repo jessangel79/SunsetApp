@@ -1,8 +1,8 @@
 # SunsetApp
 
 
-![platform-ios](https://img.shields.io/badge/platform-ios-lightgrey.svg) ![swift-version](https://img.shields.io/badge/swift-5.0-red.svg) ![device](https://img.shields.io/badge/Device-iPhone--iPad-green)
-![version](https://img.shields.io/badge/Version-1.0-blue)
+![platform-ios](https://img.shields.io/badge/platform-ios--macos-lightgrey.svg) ![swift-version](https://img.shields.io/badge/swift-5.0-red.svg) ![device](https://img.shields.io/badge/Device-iPhone--iPad--Mac-green)
+![version](https://img.shields.io/badge/Version-1.1-blue)
 
 ### Fonctionnalités :
 

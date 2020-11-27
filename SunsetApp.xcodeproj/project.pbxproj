@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D659C8DA8C963DE48AA7811 /* Pods_SunsetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2FD03FA86C458EE4C6EE60 /* Pods_SunsetAppTests.framework */; };
 		3A028E22251CC70C00FC7C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E21251CC70C00FC7C37 /* AppDelegate.swift */; };
 		3A028E24251CC70C00FC7C37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E23251CC70C00FC7C37 /* SceneDelegate.swift */; };
 		3A028E26251CC70C00FC7C37 /* SunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E25251CC70C00FC7C37 /* SunViewController.swift */; };
@@ -41,7 +40,8 @@
 		3AFE77FD25272C6900167208 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE77FC25272C6900167208 /* README.md */; };
 		3AFE7829252733E900167208 /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE7828252733E900167208 /* FormatDate.swift */; };
 		3AFE782E25277C7E00167208 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE782D25277C7D00167208 /* Date.swift */; };
-		A151A53C2EE45AD599300464 /* Pods_SunsetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22F616DA6B044BAE6A64AB4E /* Pods_SunsetApp.framework */; };
+		EDB344423F98AFFCB09B283B /* Pods_SunsetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BECFC399CEA54C4A08FC12FD /* Pods_SunsetApp.framework */; };
+		FED2ADA5627E8E7FB3A621BF /* Pods_SunsetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30B60154B9B4F3C12DAD5518 /* Pods_SunsetAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,10 +62,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		050E397106F1E0602BCF668F /* Pods-SunsetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetAppTests.release.xcconfig"; path = "Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		117AA41BB43B1D53DC142262 /* Pods-SunsetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetApp.debug.xcconfig"; path = "Target Support Files/Pods-SunsetApp/Pods-SunsetApp.debug.xcconfig"; sourceTree = "<group>"; };
-		22F616DA6B044BAE6A64AB4E /* Pods_SunsetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunsetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		39B55FE93AD15270EF032762 /* Pods-SunsetAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		05802407F19FF2B0DFEDA3CD /* Pods-SunsetAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetAppTests.debug.xcconfig"; path = "Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		091F6CE1449C962D069A9D58 /* Pods-SunsetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetApp.release.xcconfig"; path = "Target Support Files/Pods-SunsetApp/Pods-SunsetApp.release.xcconfig"; sourceTree = "<group>"; };
+		30B60154B9B4F3C12DAD5518 /* Pods_SunsetAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunsetAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		358DAB9A9779C9676FE6AD3C /* Pods-SunsetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetAppTests.release.xcconfig"; path = "Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		3A028E1E251CC70C00FC7C37 /* SunsetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunsetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A028E21251CC70C00FC7C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A028E23251CC70C00FC7C37 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 		3AFE77FC25272C6900167208 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3AFE7828252733E900167208 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
 		3AFE782D25277C7D00167208 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		7D2FD03FA86C458EE4C6EE60 /* Pods_SunsetAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunsetAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB3640FAF16BB4522270B226 /* Pods-SunsetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetApp.release.xcconfig"; path = "Target Support Files/Pods-SunsetApp/Pods-SunsetApp.release.xcconfig"; sourceTree = "<group>"; };
+		605ED2744AC20EFC1C21E569 /* Pods-SunsetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SunsetApp.debug.xcconfig"; path = "Target Support Files/Pods-SunsetApp/Pods-SunsetApp.debug.xcconfig"; sourceTree = "<group>"; };
+		BECFC399CEA54C4A08FC12FD /* Pods_SunsetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunsetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */,
-				A151A53C2EE45AD599300464 /* Pods_SunsetApp.framework in Frameworks */,
+				EDB344423F98AFFCB09B283B /* Pods_SunsetApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D659C8DA8C963DE48AA7811 /* Pods_SunsetAppTests.framework in Frameworks */,
+				FED2ADA5627E8E7FB3A621BF /* Pods_SunsetAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +137,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10BF336EF7BF9C22367AE9D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BECFC399CEA54C4A08FC12FD /* Pods_SunsetApp.framework */,
+				30B60154B9B4F3C12DAD5518 /* Pods_SunsetAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3A028E15251CC70C00FC7C37 = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +155,7 @@
 				3A028E42251CC70E00FC7C37 /* SunsetAppUITests */,
 				3A028E1F251CC70C00FC7C37 /* Products */,
 				6FD08C16CC33359D414A4BB4 /* Pods */,
-				4ECB4F3A3C53E1B9F3D198CA /* Frameworks */,
+				10BF336EF7BF9C22367AE9D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,22 +321,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4ECB4F3A3C53E1B9F3D198CA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				22F616DA6B044BAE6A64AB4E /* Pods_SunsetApp.framework */,
-				7D2FD03FA86C458EE4C6EE60 /* Pods_SunsetAppTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6FD08C16CC33359D414A4BB4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				117AA41BB43B1D53DC142262 /* Pods-SunsetApp.debug.xcconfig */,
-				BB3640FAF16BB4522270B226 /* Pods-SunsetApp.release.xcconfig */,
-				39B55FE93AD15270EF032762 /* Pods-SunsetAppTests.debug.xcconfig */,
-				050E397106F1E0602BCF668F /* Pods-SunsetAppTests.release.xcconfig */,
+				605ED2744AC20EFC1C21E569 /* Pods-SunsetApp.debug.xcconfig */,
+				091F6CE1449C962D069A9D58 /* Pods-SunsetApp.release.xcconfig */,
+				05802407F19FF2B0DFEDA3CD /* Pods-SunsetAppTests.debug.xcconfig */,
+				358DAB9A9779C9676FE6AD3C /* Pods-SunsetAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -339,12 +339,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A028E48251CC70E00FC7C37 /* Build configuration list for PBXNativeTarget "SunsetApp" */;
 			buildPhases = (
-				95A0F6710D2D9574B523222A /* [CP] Check Pods Manifest.lock */,
+				F612D7D7FA8D384AEE2D37E2 /* [CP] Check Pods Manifest.lock */,
 				3A028E1A251CC70C00FC7C37 /* Sources */,
 				3A028E1B251CC70C00FC7C37 /* Frameworks */,
 				3A028E1C251CC70C00FC7C37 /* Resources */,
 				3A59214C251CD10000D882EA /* ShellScript */,
-				25B37697350AE7CC751BA7F4 /* [CP] Embed Pods Frameworks */,
+				D7B807D06916F212AAD77DFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -362,10 +362,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A028E4B251CC70E00FC7C37 /* Build configuration list for PBXNativeTarget "SunsetAppTests" */;
 			buildPhases = (
-				832A4CA55BEB2A1BB5344CD7 /* [CP] Check Pods Manifest.lock */,
+				DCAF2EAC8CF2796703603203 /* [CP] Check Pods Manifest.lock */,
 				3A028E30251CC70E00FC7C37 /* Sources */,
 				3A028E31251CC70E00FC7C37 /* Frameworks */,
 				3A028E32251CC70E00FC7C37 /* Resources */,
+				B8C046FC02AFA19724EFCB13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -472,23 +473,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25B37697350AE7CC751BA7F4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3A59214C251CD10000D882EA /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -506,7 +490,41 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		832A4CA55BEB2A1BB5344CD7 /* [CP] Check Pods Manifest.lock */ = {
+		B8C046FC02AFA19724EFCB13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SunsetAppTests/Pods-SunsetAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7B807D06916F212AAD77DFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SunsetApp/Pods-SunsetApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCAF2EAC8CF2796703603203 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -528,7 +546,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95A0F6710D2D9574B523222A /* [CP] Check Pods Manifest.lock */ = {
+		F612D7D7FA8D384AEE2D37E2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -752,12 +770,13 @@
 		};
 		3A028E49251CC70E00FC7C37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 117AA41BB43B1D53DC142262 /* Pods-SunsetApp.debug.xcconfig */;
+			baseConfigurationReference = 605ED2744AC20EFC1C21E569 /* Pods-SunsetApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SunsetApp/SunsetApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -768,6 +787,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.angelappdev.SunsetApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -778,12 +798,13 @@
 		};
 		3A028E4A251CC70E00FC7C37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB3640FAF16BB4522270B226 /* Pods-SunsetApp.release.xcconfig */;
+			baseConfigurationReference = 091F6CE1449C962D069A9D58 /* Pods-SunsetApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SunsetApp/SunsetApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AS4ZG3MAQH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -794,6 +815,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.angelappdev.SunsetApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
@@ -804,7 +826,7 @@
 		};
 		3A028E4C251CC70E00FC7C37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39B55FE93AD15270EF032762 /* Pods-SunsetAppTests.debug.xcconfig */;
+			baseConfigurationReference = 05802407F19FF2B0DFEDA3CD /* Pods-SunsetAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -828,7 +850,7 @@
 		};
 		3A028E4D251CC70E00FC7C37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 050E397106F1E0602BCF668F /* Pods-SunsetAppTests.release.xcconfig */;
+			baseConfigurationReference = 358DAB9A9779C9676FE6AD3C /* Pods-SunsetAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

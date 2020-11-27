@@ -7,19 +7,14 @@ target 'SunsetApp' do
   use_frameworks!
   
   pod 'SwiftLint'
-  pod 'RealmSwift', '~> 5.4.8'
+  pod 'RealmSwift', '~> 10.1.0' # '~> 5.4.8' # '~> 5.5.0'
   
   target 'SunsetAppTests' do
     inherit! :search_paths
     # pod 'RealmSwift', '~> 5.0'
+    pod 'RealmSwift', '~> 10.1.0'
+    
   end
 
 end
 
-post_install do |installer|
-     installer.pods_project.targets.each do |target|
-           target.build_configurations.each do |config|
-                 config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
-           end
-     end
- end
