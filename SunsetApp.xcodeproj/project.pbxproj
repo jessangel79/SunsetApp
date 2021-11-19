@@ -51,8 +51,8 @@
 		3A90D0372746AD7600E38112 /* ActiveButton.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A90D0362746AD7600E38112 /* ActiveButton.gif */; };
 		3A90D0392746B56D00E38112 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90D0382746B56D00E38112 /* LocationManagerDelegate.swift */; };
 		3AA315F92523A03600B9C19E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA315F82523A03500B9C19E /* DataManager.swift */; };
+		3ADF0AE42747DD6E008872CA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF0AE32747DD6E008872CA /* README.md */; };
 		3AE2A7A427342E8E0035A9AB /* logoSunset.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE2A7A327342E8E0035A9AB /* logoSunset.png */; };
-		3AFE77FD25272C6900167208 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3AFE77FC25272C6900167208 /* README.md */; };
 		3AFE7829252733E900167208 /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE7828252733E900167208 /* FormatDate.swift */; };
 		3AFE782E25277C7E00167208 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE782D25277C7D00167208 /* Date.swift */; };
 		C82BF275A4DDCC357D434C53 /* Pods_SunsetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52686492A15EF41B098F5B9 /* Pods_SunsetApp.framework */; };
@@ -126,8 +126,8 @@
 		3A90D0362746AD7600E38112 /* ActiveButton.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ActiveButton.gif; sourceTree = "<group>"; };
 		3A90D0382746B56D00E38112 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		3AA315F82523A03500B9C19E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3ADF0AE32747DD6E008872CA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3AE2A7A327342E8E0035A9AB /* logoSunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSunset.png; sourceTree = "<group>"; };
-		3AFE77FC25272C6900167208 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3AFE7828252733E900167208 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
 		3AFE782D25277C7D00167208 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		3FB956388AB2193467E50FDB /* Pods_SunsetAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SunsetAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				3A028E27251CC70C00FC7C37 /* Main.storyboard */,
-				3AFE77FC25272C6900167208 /* README.md */,
+				3ADF0AE32747DD6E008872CA /* README.md */,
 				3A90D03A2746B5B900E38112 /* LocalStorage */,
 				3A59215B251CD24400D882EA /* SunsetSunrise */,
 				3A59215F251CD2FC00D882EA /* Informations */,
@@ -502,8 +502,8 @@
 			);
 			mainGroup = 3A028E15251CC70C00FC7C37;
 			packageReferences = (
-				3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
-				3A3099A12746BC7900B01983 /* XCRemoteSwiftPackageReference "SwiftyGif.git" */,
+				3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3A3099A12746BC7900B01983 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
 			);
 			productRefGroup = 3A028E1F251CC70C00FC7C37 /* Products */;
 			projectDirPath = "";
@@ -523,9 +523,9 @@
 			files = (
 				3A028E2E251CC70D00FC7C37 /* LaunchScreen.storyboard in Resources */,
 				3A028E2B251CC70D00FC7C37 /* Assets.xcassets in Resources */,
+				3ADF0AE42747DD6E008872CA /* README.md in Resources */,
 				3A90D0372746AD7600E38112 /* ActiveButton.gif in Resources */,
 				3A592165251CD47000D882EA /* Sun.storyboard in Resources */,
-				3AFE77FD25272C6900167208 /* README.md in Resources */,
 				3A5921A8251D101800D882EA /* Informations.storyboard in Resources */,
 				3A028E29251CC70C00FC7C37 /* Main.storyboard in Resources */,
 				3A2879C725249A7F009A609E /* ApiKeys.plist in Resources */,
@@ -1024,7 +1024,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -1032,7 +1032,7 @@
 				minimumVersion = 5.2.2;
 			};
 		};
-		3A3099A12746BC7900B01983 /* XCRemoteSwiftPackageReference "SwiftyGif.git" */ = {
+		3A3099A12746BC7900B01983 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
 			requirement = {
@@ -1045,12 +1045,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		3A028E65251CCBD600FC7C37 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 3A028E64251CCBD600FC7C37 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		3A3099A22746BC7900B01983 /* SwiftyGif */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3A3099A12746BC7900B01983 /* XCRemoteSwiftPackageReference "SwiftyGif.git" */;
+			package = 3A3099A12746BC7900B01983 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
 			productName = SwiftyGif;
 		};
 /* End XCSwiftPackageProductDependency section */
