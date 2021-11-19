@@ -71,12 +71,13 @@ class NotificationHelper: NSObject {
         print("notification created : \(notification.id)")
     }
     
-    static func removeLocalNotification(_ notification: NotificationModel) {
-        // delete notification with id
-        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(notification.id)"])
-        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["\(notification.id)"])
-        //        print("notification deleted with id in addLocalNotification : \(notification.id)")
-    }
+    // not used
+//    static func removeLocalNotification(_ notification: NotificationModel) {
+//        // delete notification with id
+//        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(notification.id)"])
+//        UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: ["\(notification.id)"])
+//        //        print("notification deleted with id in addLocalNotification : \(notification.id)")
+//    }
     
     static func removeAllLocalNotification() {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()

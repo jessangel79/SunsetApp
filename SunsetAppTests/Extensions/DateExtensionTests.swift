@@ -10,6 +10,8 @@ import XCTest
 
 class DateExtensionTests: XCTestCase {
     
+    // MARK: - Test Extension Date
+    
     func testDateIsCorrect() throws {
         XCTAssertEqual(false, Date().checkDate())
         XCTAssertEqual(true, Date().addingTimeInterval(10).checkDate())

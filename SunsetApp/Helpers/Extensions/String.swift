@@ -37,7 +37,6 @@ extension String {
             guard let month = dateComponents.month else { return "" }
             guard let day = dateComponents.day else { return "" }
             dateTemp = "\(year)-\(month)-\(day)"
-//            dateTemp = "\(dateComponents.year ?? 0)-\(dateComponents.month ?? 0)-\(dateComponents.day ?? 0)"
         }
         return dateTemp
     }
@@ -51,19 +50,19 @@ extension String {
         return stringDate
     }
     
-    /// get old date
-    func getOldDate(sunList: Results<Sun>) -> String {
-        var oldDateTemp = ""
-        for sun in sunList {
-            oldDateTemp = sun.oldDate.transformDate()
-            let oldDateInDate = oldDateTemp.toDate()
-            oldDateTemp = oldDateInDate.toString(format: "yyyy-MM-dd")
-        }
-        return oldDateTemp
-    }
-    
     /// get old date Test
-    func getOldDateTest(sunList: Results<Sun>, format: String) -> String {
+//    func getOldDateTest(sunList: Results<Sun>) -> String {
+//        var oldDateTemp = ""
+//        for sun in sunList {
+//            oldDateTemp = sun.oldDate.transformDate()
+//            let oldDateInDate = oldDateTemp.toDate()
+//            oldDateTemp = oldDateInDate.toString(format: "yyyy-MM-dd")
+//        }
+//        return oldDateTemp
+//    }
+    
+    /// get old date
+    func getOldDate(sunList: Results<Sun>, format: String) -> String {
         var oldDateTemp = ""
         for sun in sunList {
             oldDateTemp = sun.oldDate

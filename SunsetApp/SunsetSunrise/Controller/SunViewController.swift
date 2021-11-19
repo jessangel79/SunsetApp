@@ -157,8 +157,8 @@ final class SunViewController: UIViewController {
         //        currentDate = "2020-10-01"
         currentDate = currentDate.getCurrentDate(dateFormat: FormatDate.formatted.rawValue)
         guard let sunList = realm?.objects(Sun.self) else { return }
-//        oldDate = oldDate.getOldDate(sunList: sunList)
-        oldDate = oldDate.getOldDateTest(sunList: sunList, format: FormatDate.formatted.rawValue)
+//        oldDate = oldDate.getOldDateTest(sunList: sunList)
+        oldDate = oldDate.getOldDate(sunList: sunList, format: FormatDate.formatted.rawValue)
 
     }
     
@@ -166,8 +166,8 @@ final class SunViewController: UIViewController {
         //        currentDateNoFormatted = "2020-10-01T05:44:57+00:00"
         currentDateNoFormatted = currentDateNoFormatted.getCurrentDate(dateFormat: FormatDate.noFormatted.rawValue)
         guard let sunList = realm?.objects(Sun.self) else { return }
-//        oldDateNoFormatted = oldDateNoFormatted.getOldDate(sunList: sunList)
-        oldDateNoFormatted = oldDateNoFormatted.getOldDateTest(sunList: sunList, format: FormatDate.noFormatted.rawValue)
+//        oldDateNoFormatted = oldDateNoFormatted.getOldDateTest(sunList: sunList)
+        oldDateNoFormatted = oldDateNoFormatted.getOldDate(sunList: sunList, format: FormatDate.noFormatted.rawValue)
 
     }
     

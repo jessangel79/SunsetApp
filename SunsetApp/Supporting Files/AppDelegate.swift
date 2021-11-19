@@ -9,6 +9,7 @@ import UIKit
 import RealmSwift
 import UserNotifications
 import GoogleMobileAds
+import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
             })
         Realm.Configuration.defaultConfiguration = config
-        
 //        registerForLocalNotifications()
         configureNotification()
         

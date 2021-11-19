@@ -33,7 +33,6 @@ class SunsetAppTests: XCTestCase {
         long = "2.3494364411919713"
         title = "Bye Bye Sun !"
         body = "The sun has set. The shutters must be closed !!!"
-//        id = UUID(uuidString: "97E2F410-7FBB-44B5-8E7F-4AA5C151CB6E")
     }
 
     override func tearDownWithError() throws {}
@@ -50,7 +49,6 @@ class SunsetAppTests: XCTestCase {
     func testCreateSunApiUrl() throws {
         let fakeResponse = FakeResponse(response: FakeResponseData.responseOK, data: FakeResponseData.correctDataSunset, result: nil)
         let sunSessionFake = SunSessionFake(fakeResponse: fakeResponse)
-//        let sunService = SunService(sunSession: sunSessionFake)
         let createSunApiUrl = sunSessionFake.createSunApiUrl(date: date, lat: lat, long: long)
         XCTAssertEqual(createSunApiUrl, URL(string: "https://api.sunrise-sunset.org/json?formatted=0&date=2021-11-12&lat=48.87035207937362&lng=2.3494364411919713"))
     }
@@ -104,7 +102,7 @@ class SunsetAppTests: XCTestCase {
     func testNotificationHelperIfRequesAuthorizationIsGrantedAndSuccessOfAddNotification() throws {
         let fakeDateNotification = Date()
         let notificationModel = NotificationModel(title: title, message: body, plannedFor: fakeDateNotification)
-//        NotificationHelper.requestAuthorization(notificationModel, fakeDateNotification)
+        NotificationHelper.requestAuthorization(notificationModel, fakeDateNotification)
         NotificationHelper.addLocalNotification(notificationModel)
         let ifNotificationAdded = UNUserNotificationCenter.getPendingNotificationRequests
         XCTAssertEqual(false, [ifNotificationAdded].isEmpty)

@@ -14,15 +14,13 @@
 		3A028E2B251CC70D00FC7C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A028E2A251CC70D00FC7C37 /* Assets.xcassets */; };
 		3A028E2E251CC70D00FC7C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A028E2C251CC70D00FC7C37 /* LaunchScreen.storyboard */; };
 		3A028E39251CC70E00FC7C37 /* SunsetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E38251CC70E00FC7C37 /* SunsetAppTests.swift */; };
-		3A028E44251CC70E00FC7C37 /* SunsetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E43251CC70E00FC7C37 /* SunsetAppUITests.swift */; };
+		3A028E44251CC70E00FC7C37 /* SunViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A028E43251CC70E00FC7C37 /* SunViewControllerUITests.swift */; };
 		3A028E66251CCBD600FC7C37 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3A028E65251CCBD600FC7C37 /* Alamofire */; };
 		3A221E3E25262AE200B9C0C8 /* StructDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E3D25262AE200B9C0C8 /* StructDataManager.swift */; };
 		3A221E4825262E5000B9C0C8 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E4725262E5000B9C0C8 /* NotificationHelper.swift */; };
 		3A221E4D25262E7D00B9C0C8 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E4C25262E7D00B9C0C8 /* NotificationModel.swift */; };
 		3A221E582526425100B9C0C8 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E572526425100B9C0C8 /* Sun.swift */; };
 		3A221E682526521200B9C0C8 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A221E672526521200B9C0C8 /* UserSettings.swift */; };
-		3A2879C725249A7F009A609E /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A2879C625249A7F009A609E /* ApiKeys.plist */; };
-		3A2879CC25249B01009A609E /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2879CB25249B01009A609E /* ApiKeys.swift */; };
 		3A2879DF2524E115009A609E /* SunAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2879DE2524E115009A609E /* SunAPI.swift */; };
 		3A2E7BB5252F37BD007E31E3 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E7BB4252F37BD007E31E3 /* Int.swift */; };
 		3A3099932746BA7C00B01983 /* FakeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3099902746BA7300B01983 /* FakeResponse.swift */; };
@@ -90,15 +88,13 @@
 		3A028E38251CC70E00FC7C37 /* SunsetAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetAppTests.swift; sourceTree = "<group>"; };
 		3A028E3A251CC70E00FC7C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A028E3F251CC70E00FC7C37 /* SunsetAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunsetAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A028E43251CC70E00FC7C37 /* SunsetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetAppUITests.swift; sourceTree = "<group>"; };
+		3A028E43251CC70E00FC7C37 /* SunViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunViewControllerUITests.swift; sourceTree = "<group>"; };
 		3A028E45251CC70E00FC7C37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A221E3D25262AE200B9C0C8 /* StructDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructDataManager.swift; sourceTree = "<group>"; };
 		3A221E4725262E5000B9C0C8 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		3A221E4C25262E7D00B9C0C8 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		3A221E572526425100B9C0C8 /* Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
 		3A221E672526521200B9C0C8 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		3A2879C625249A7F009A609E /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
-		3A2879CB25249B01009A609E /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		3A2879DE2524E115009A609E /* SunAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunAPI.swift; sourceTree = "<group>"; };
 		3A2E7BB4252F37BD007E31E3 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		3A3099902746BA7300B01983 /* FakeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeResponse.swift; sourceTree = "<group>"; };
@@ -218,7 +214,7 @@
 		3A028E42251CC70E00FC7C37 /* SunsetAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3A028E43251CC70E00FC7C37 /* SunsetAppUITests.swift */,
+				3A028E43251CC70E00FC7C37 /* SunViewControllerUITests.swift */,
 				3A028E45251CC70E00FC7C37 /* Info.plist */,
 			);
 			path = SunsetAppUITests;
@@ -263,8 +259,6 @@
 				3A028E23251CC70C00FC7C37 /* SceneDelegate.swift */,
 				3A028E21251CC70C00FC7C37 /* AppDelegate.swift */,
 				3A028E2C251CC70D00FC7C37 /* LaunchScreen.storyboard */,
-				3A2879C625249A7F009A609E /* ApiKeys.plist */,
-				3A2879CB25249B01009A609E /* ApiKeys.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -528,7 +522,6 @@
 				3A592165251CD47000D882EA /* Sun.storyboard in Resources */,
 				3A5921A8251D101800D882EA /* Informations.storyboard in Resources */,
 				3A028E29251CC70C00FC7C37 /* Main.storyboard in Resources */,
-				3A2879C725249A7F009A609E /* ApiKeys.plist in Resources */,
 				3A90D02D2746ABFC00E38112 /* Location.gpx in Resources */,
 				3AE2A7A427342E8E0035A9AB /* logoSunset.png in Resources */,
 			);
@@ -660,7 +653,6 @@
 				3A592178251CF25900D882EA /* SunSession.swift in Sources */,
 				3A592173251CE6C600D882EA /* UIViewController+CustomUI.swift in Sources */,
 				3A5921AF251D109100D882EA /* InformationsViewController.swift in Sources */,
-				3A2879CC25249B01009A609E /* ApiKeys.swift in Sources */,
 				3A221E4D25262E7D00B9C0C8 /* NotificationModel.swift in Sources */,
 				3A221E682526521200B9C0C8 /* UserSettings.swift in Sources */,
 			);
@@ -685,7 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A028E44251CC70E00FC7C37 /* SunsetAppUITests.swift in Sources */,
+				3A028E44251CC70E00FC7C37 /* SunViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +846,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "SunsetApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -881,6 +874,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "SunsetApp/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

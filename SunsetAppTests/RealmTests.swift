@@ -10,6 +10,12 @@ import XCTest
 import RealmSwift
 
 class RealmTests: XCTestCase {
+    
+    // MARK: - Properties
+    
+    let config = Realm.Configuration(inMemoryIdentifier: "RealmTests")
+    
+    // MARK: - Tests Life Cycle
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -17,8 +23,6 @@ class RealmTests: XCTestCase {
     }
 
     // MARK: - Helpers
-    
-    let config = Realm.Configuration(inMemoryIdentifier: "RealmTests")
     
     func getSunResult() -> ResultsApi? {
         let date = "2021-11-12"
@@ -33,27 +37,28 @@ class RealmTests: XCTestCase {
         }
         return result
     }
-
-    // Test Code
     
-    func testSaveDataSunWhenGetSunriseSuccess() throws {
+    func saveDataSun(_ testRealm: Realm) {
         let currentDate = Date().toString(format: FormatDate.noFormatted.rawValue)
         let tomorrowDate = Date().addingTimeInterval(86400).toString(format: FormatDate.noFormatted.rawValue)
         var oldDateNoFormatted = "2021-11-11T06:53:40+00:00"
-//        let config = Realm.Configuration(inMemoryIdentifier: "RealmTests")
-        guard let testRealm = try? Realm(configuration: config) else { return }
         guard let sunApiResults = getSunResult() else { return }
         let dataSun = StructDataManager(sunApiResults: sunApiResults, currentDate: currentDate, tomorrowDate: tomorrowDate, realm: testRealm)
         let dataManager = DataManager()
         dataManager.saveDataSun(data: dataSun, oldDateNoFormatted: &oldDateNoFormatted)
-        
+    }
+
+    // MARK: - Test SaveDataSun
+    
+    func testSaveDataSunWhenGetSunriseSuccess() throws {
+        guard let testRealm = try? Realm(configuration: config) else { return }
+        saveDataSun(testRealm)
         XCTAssertEqual(testRealm.objects(Sun.self).first?.sunset, "2021-11-12T16:15:52+00:00".transformHour())
         XCTAssertEqual(testRealm.objects(Sun.self).first?.dayLength, 33732.convertSecondsInHours())
         XCTAssertEqual(testRealm.objects(Sun.self).first?.sunsetNoFormatted, "2021-11-12T16:15:52+00:00")
     }
     
     func testDeleteAllDataSun() {
-//        let config = Realm.Configuration(inMemoryIdentifier: "RealmTests")
         guard let testRealm = try? Realm(configuration: config) else { return }
         let dataManager = DataManager()
         dataManager.deleteAllDataSun(realm: testRealm)
