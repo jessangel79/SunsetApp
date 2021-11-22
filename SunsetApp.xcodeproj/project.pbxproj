@@ -47,7 +47,6 @@
 		3A90D02F2746AC0500E38112 /* AdMobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90D02E2746AC0500E38112 /* AdMobService.swift */; };
 		3A90D0312746AC1400E38112 /* UIViewController+GADBannerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90D0302746AC1400E38112 /* UIViewController+GADBannerViewDelegate.swift */; };
 		3A90D0372746AD7600E38112 /* ActiveButton.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3A90D0362746AD7600E38112 /* ActiveButton.gif */; };
-		3A90D0392746B56D00E38112 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90D0382746B56D00E38112 /* LocationManagerDelegate.swift */; };
 		3AA315F92523A03600B9C19E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA315F82523A03500B9C19E /* DataManager.swift */; };
 		3ADF0AE42747DD6E008872CA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF0AE32747DD6E008872CA /* README.md */; };
 		3AE2A7A427342E8E0035A9AB /* logoSunset.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AE2A7A327342E8E0035A9AB /* logoSunset.png */; };
@@ -120,7 +119,6 @@
 		3A90D02E2746AC0500E38112 /* AdMobService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdMobService.swift; sourceTree = "<group>"; };
 		3A90D0302746AC1400E38112 /* UIViewController+GADBannerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+GADBannerViewDelegate.swift"; sourceTree = "<group>"; };
 		3A90D0362746AD7600E38112 /* ActiveButton.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ActiveButton.gif; sourceTree = "<group>"; };
-		3A90D0382746B56D00E38112 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		3AA315F82523A03500B9C19E /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3ADF0AE32747DD6E008872CA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3AE2A7A327342E8E0035A9AB /* logoSunset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoSunset.png; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 				3A592184251CF28C00D882EA /* SunProtocol.swift */,
 				3A2879DE2524E115009A609E /* SunAPI.swift */,
 				3AFE7828252733E900167208 /* FormatDate.swift */,
-				3A90D0382746B56D00E38112 /* LocationManagerDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -647,7 +644,6 @@
 				3A592185251CF28C00D882EA /* SunProtocol.swift in Sources */,
 				3A5921A3251D0EFB00D882EA /* UIViewController+ActivityIndicator.swift in Sources */,
 				3A5921B7251D1AE800D882EA /* String.swift in Sources */,
-				3A90D0392746B56D00E38112 /* LocationManagerDelegate.swift in Sources */,
 				3A2879DF2524E115009A609E /* SunAPI.swift in Sources */,
 				3A028E24251CC70C00FC7C37 /* SceneDelegate.swift in Sources */,
 				3A592178251CF25900D882EA /* SunSession.swift in Sources */,

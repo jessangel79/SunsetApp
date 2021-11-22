@@ -35,7 +35,6 @@ final class SunViewController: UIViewController {
     private var currentDate = String()
     private var tomorrowDate = String()
     private var oldDate = String()
-    //    private var sunList: Results<Sun>!
     private var currentDateNoFormatted = String()
     private var tomorrowDateNoFormatted = String()
     private var oldDateNoFormatted = String()
@@ -45,11 +44,7 @@ final class SunViewController: UIViewController {
     private var isNotificationIsActivated = false
     private var completion: ((String, String, Date) -> Void)?
     private var reminds: [NotificationModel] = [NotificationModel]()
-    
     private let adMobService = AdMobService()
-
-    //    weak var locationManagerDelegate: LocationManagerDelegate? // Test
-    
     private let locationManager = CLLocationManager()
     private var userPosition: CLLocation?
     private var latitude: Double?
@@ -67,8 +62,6 @@ final class SunViewController: UIViewController {
     }
     
     @IBAction private func activeNotificationButtonTapped(_ sender: UIButton) {
-        //        locationManager.requestLocation()
-        //        guard let locationManagerDelegate = locationManagerDelegate else {return}
         locationManager.requestLocation()
         activateRemind()
     }
@@ -78,8 +71,6 @@ final class SunViewController: UIViewController {
     }
     
     @IBAction private func typeDaySelected(_ sender: UISegmentedControl) {
-        //        locationManager.requestLocation()
-        //        guard let locationManagerDelegate = locationManagerDelegate else {return}
         locationManager.requestLocation()
         UserSettings.segmentedTypeDay = choiceDaySegmentedControl.selectedSegmentIndex
         switch sender.selectedSegmentIndex {
@@ -96,20 +87,16 @@ final class SunViewController: UIViewController {
         super.viewDidLoad()
         customUI()
         loadUserDefaults()
-        
-        //        CLLocationManager().delegate = locationManagerDelegate
-        //        guard let locationManagerDelegate = locationManagerDelegate else {return}
         setupLocationManager()
         locateUser()
-        
         adMobService.setAdMob(bannerView, self)
         NotificationHelper.removeAllLocalNotificationDelivered()
         reminds = [NotificationModel]()
         getDates()
         setData()
         setAlarm()
-        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
-        debug()
+//        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
+//        debug()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -132,8 +119,6 @@ final class SunViewController: UIViewController {
     }
     
     private func refresh() {
-        //        guard let locationManagerDelegate = locationManagerDelegate else {return}
-        //        locationManager.requestLocation()
         locationManager.requestLocation()
         locateUser()
         getDates()
@@ -155,19 +140,15 @@ final class SunViewController: UIViewController {
     }
     
     private func getDatesFormatted() {
-        //        currentDate = "2020-10-01"
         currentDate = currentDate.getCurrentDate(dateFormat: FormatDate.formatted.rawValue)
         guard let sunList = realm?.objects(Sun.self) else { return }
-//        oldDate = oldDate.getOldDateTest(sunList: sunList)
         oldDate = oldDate.getOldDate(sunList: sunList, format: FormatDate.formatted.rawValue)
 
     }
     
     private func getDatesNoFormatted() {
-        //        currentDateNoFormatted = "2020-10-01T05:44:57+00:00"
         currentDateNoFormatted = currentDateNoFormatted.getCurrentDate(dateFormat: FormatDate.noFormatted.rawValue)
         guard let sunList = realm?.objects(Sun.self) else { return }
-//        oldDateNoFormatted = oldDateNoFormatted.getOldDateTest(sunList: sunList)
         oldDateNoFormatted = oldDateNoFormatted.getOldDate(sunList: sunList, format: FormatDate.noFormatted.rawValue)
 
     }
@@ -211,15 +192,13 @@ final class SunViewController: UIViewController {
     }
     
     private func getSunsetSunriseNoFormatted(date: String) {
-        //        guard let locationManagerDelegate = locationManagerDelegate else {return}
         locateUser()
         let dataManager = DataManager()
         dataManager.deleteAllDataSun(realm: realm)
         let sunService = SunService()
         let lat = coordinateInit.latitude.description
         let long = coordinateInit.longitude.description
-        // DispatchQueue.main.async // pour LocateUser() ???
-        sunService.getSunsetSunrise(date: date, lat: lat, long: long) { (success, sunApi) in // currentDate: currentDate
+        sunService.getSunsetSunrise(date: date, lat: lat, long: long) { (success, sunApi) in
             self.toggleActivityIndicator(shown: false,
                                          activityIndicator: self.activityIndicator,
                                          view: self.baseView)

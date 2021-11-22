@@ -26,12 +26,4 @@ extension Date {
         }
         return dateIsCorrect
     }
-    
-//    func checkDate() -> Bool {
-//        if self > Date() {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
 }

@@ -10,7 +10,7 @@ import Alamofire
 
 protocol SunProtocol {
     var urlStringApi: String { get }
-    func request(url: URL, completionHandler: @escaping (AFDataResponse<Any>) -> Void) // @escaping (AFDataResponse<Any>) // @escaping (DataResponse<Any, AFError>)
+    func request(url: URL, completionHandler: @escaping (AFDataResponse<Any>) -> Void) // @escaping (DataResponse<Any, AFError>)
 }
 
 extension SunProtocol {
@@ -46,8 +46,6 @@ extension SunProtocol {
     /// url  for API to get sunset, surise and lengthday with date not formatted
     var urlStringApi: String {
         return "\(scheme)://\(host)/\(format)?\(noFormatted)"
-//        return "\(scheme)://\(host)/\(format)?\(lat)&\(lng)&\(noFormatted)&date="
-//        return "\(scheme)://\(host)/\(format)?\(noFormatted)&date="
     }
     
 //    https://api.sunrise-sunset.org/json?lat=49.051111&lng=2.206869&date=2020-09-26 // today

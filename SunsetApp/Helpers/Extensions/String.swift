@@ -49,18 +49,7 @@ extension String {
         let stringDate = dateFormatter.string(from: currentDate)
         return stringDate
     }
-    
-    /// get old date Test
-//    func getOldDateTest(sunList: Results<Sun>) -> String {
-//        var oldDateTemp = ""
-//        for sun in sunList {
-//            oldDateTemp = sun.oldDate.transformDate()
-//            let oldDateInDate = oldDateTemp.toDate()
-//            oldDateTemp = oldDateInDate.toString(format: "yyyy-MM-dd")
-//        }
-//        return oldDateTemp
-//    }
-    
+
     /// get old date
     func getOldDate(sunList: Results<Sun>, format: String) -> String {
         var oldDateTemp = ""

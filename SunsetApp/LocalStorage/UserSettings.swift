@@ -16,7 +16,6 @@ struct MyUserDefaults<DataType> {
         get {
             guard let value = UserDefaults.standard.object(forKey: key) as? DataType else { return defaultValue }
             return value
-//            return UserDefaults.standard.object(forKey: key) as? DataType ?? defaultValue
         }
         set {
             UserDefaults.standard.set(newValue, forKey: key)

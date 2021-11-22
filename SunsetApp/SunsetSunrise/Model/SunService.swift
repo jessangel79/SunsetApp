@@ -45,11 +45,6 @@ final class SunService {
         let myLong = sunSession.stringLongitude + long
         let myDate = sunSession.stringDate + date
         guard let url = URL(string: sunSession.urlStringApi + myDate + myLat + myLong) else { return nil }
-//        guard let url = URL(string: sunSession.urlStringApi + date) else { return nil }
-//        print("new url with lat and long : \(url)")
-//        print("date : \(date) - \(myDate)")
-//        print("latitudeInitString : \(lat) - \(myLat)")
-//        print("longitudeInitString : \(long) - \(myLong)")
         return url
     }
 }

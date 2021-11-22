@@ -61,10 +61,8 @@ class SunsetAppTests: XCTestCase {
         sunService.getSunsetSunrise(date: date, lat: lat, long: long) { success, sunAPI in
             XCTAssertTrue(success)
             XCTAssertNotNil(sunAPI)
-//            expectation.fulfill()
         }
         executeRunLoop() /// Test
-//        wait(for: [expectation], timeout: 10.0)
     }
     
     func testGetSunsetSunriseShouldPostFailedCallbackIfIncorrectData() throws {
