@@ -18,6 +18,7 @@ extension UIViewController {
         case notificationActive
         case notificationDeleted
         case authorizationStatusLocationDenied
+        case updateData
     }
     
     /// Alert message for user
@@ -41,6 +42,9 @@ extension UIViewController {
         case .authorizationStatusLocationDenied:
             title = "You have denied access to your location !"
             message = "Sorry but you have denied access to your location, this app cannot work properly"
+        case .updateData:
+            title = "Updated datas"
+            message = "The datas has been updated "
         }
         alertError(title, message)
     }

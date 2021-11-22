@@ -29,7 +29,7 @@ class StringExtensionTests: XCTestCase {
         guard let testRealm = try? Realm(configuration: realmTests.config) else { return }
         realmTests.saveDataSun(testRealm)
         let sunList = testRealm.objects(Sun.self)
-        XCTAssertEqual("2021-11-19T15:49:50+01:00".getOldDate(sunList: sunList, format: FormatDate.formatted.rawValue), "2021-11-19")
+        XCTAssertEqual("2021-11-11T06:53:40+00:00".getOldDate(sunList: sunList, format: FormatDate.formatted.rawValue), "2021-11-11")
 
     }
 }

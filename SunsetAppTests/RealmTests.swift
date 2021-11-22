@@ -39,11 +39,12 @@ class RealmTests: XCTestCase {
     }
     
     func saveDataSun(_ testRealm: Realm) {
-        let currentDate = Date().toString(format: FormatDate.noFormatted.rawValue)
-        let tomorrowDate = Date().addingTimeInterval(86400).toString(format: FormatDate.noFormatted.rawValue)
+        let currentDate = "2021-11-11T06:53:40+00:00".toDate()
+        let currentDateInStr = currentDate.toString(format: FormatDate.noFormatted.rawValue)
+        let tomorrowDateInStr = currentDate.addingTimeInterval(86400).toString(format: FormatDate.noFormatted.rawValue)
         var oldDateNoFormatted = "2021-11-11T06:53:40+00:00"
         guard let sunApiResults = getSunResult() else { return }
-        let dataSun = StructDataManager(sunApiResults: sunApiResults, currentDate: currentDate, tomorrowDate: tomorrowDate, realm: testRealm)
+        let dataSun = StructDataManager(sunApiResults: sunApiResults, currentDate: currentDateInStr, tomorrowDate: tomorrowDateInStr, realm: testRealm)
         let dataManager = DataManager()
         dataManager.saveDataSun(data: dataSun, oldDateNoFormatted: &oldDateNoFormatted)
     }

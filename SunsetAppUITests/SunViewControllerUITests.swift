@@ -26,7 +26,7 @@ class SunViewControllerUITests: XCTestCase {
 
     override func tearDownWithError() throws {}
 
-    func testTapToday() throws {
+    func testTapTomorrow() throws {
         app.buttons["Tomorrow"].tap()
         XCTAssertTrue(app.segmentedControls.firstMatch.exists)
     }
@@ -38,13 +38,12 @@ class SunViewControllerUITests: XCTestCase {
         XCTAssertTrue(app.alerts.staticTexts["Notification scheduled"].exists)
     }
     
-    func testTapActiveNotificationButDateNotCorrect() throws {
-        app.buttons["Today"].tap()
-        app.buttons["active"].tap()
-        XCTAssertTrue(app.alerts.element.exists)
-        XCTAssertTrue(app.alerts.staticTexts["Incorrect date"].exists)
-        
-    }
+//    func testTapActiveNotificationButDateNotCorrect() throws {
+//        app.buttons["Today"].tap()
+//        app.buttons["active"].tap()
+//        XCTAssertTrue(app.alerts.element.exists)
+//        XCTAssertTrue(app.alerts.staticTexts["Incorrect date"].exists)
+//    }
     
     func testTapClickOnAlertOk() throws {
         app.buttons["Tomorrow"].tap()
@@ -71,10 +70,30 @@ class SunViewControllerUITests: XCTestCase {
         XCTAssertFalse(app.alerts.element.exists)
     }
     
-    func testButtoninformation() throws {
+    func testButtonInformationToButtonFreepik() throws {
         app.navigationBars["Sun"].buttons["Info"].tap()
         app.staticTexts["Icons made by Freepik"].tap()
         XCTAssertTrue(app.webViews.element.exists)
+    }
+    
+    func testButtonInformationToButtonFlaticon() throws {
+        app.navigationBars["Sun"].buttons["Info"].tap()
+        app.staticTexts[" from Flaticon"].tap()
+        XCTAssertTrue(app.webViews.element.exists)
+    }
+    
+    func testButtonInformationToButtonAPI() throws {
+        app.navigationBars["Sun"].buttons["Info"].tap()
+        app.staticTexts["API : https://sunrise-sunset.org/api"].tap()
+        XCTAssertTrue(app.webViews.element.exists)
+    }
+    
+    func testButtonRefresh() {
+        app.navigationBars["Sun"].buttons["Refresh"].tap()
+        XCTAssertTrue(app.alerts.element.exists)
+        XCTAssertTrue(app.alerts.staticTexts["Updated datas"].exists)
+        app.alerts["Updated datas"].scrollViews.otherElements.buttons["OK"].tap()
+        XCTAssertFalse(app.alerts.element.exists)
     }
 
     func testLaunchPerformance() throws {

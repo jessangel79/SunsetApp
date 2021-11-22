@@ -138,6 +138,7 @@ final class SunViewController: UIViewController {
         locateUser()
         getDates()
         setData()
+        presentAlert(typeError: .updateData)
         UIApplication.shared.applicationIconBadgeNumber = 0
         stopGif()
     }
