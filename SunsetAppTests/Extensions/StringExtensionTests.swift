@@ -16,6 +16,12 @@ class StringExtensionTests: XCTestCase {
     let realmTests = RealmTests()
     
     // MARK: - Test Extension String
+    
+    func testStringToDate() throws {
+        let dateInStr = "2021-11-25"
+        let date = "2021-11-25T16:15:52+00:00".toDate()
+        XCTAssertEqual(date.toString(format: FormatDate.formatted.rawValue), dateInStr)
+    }
 
     func testTransformDateInHour() throws {
         XCTAssertEqual("17:15:52", "2021-11-12T16:15:52+00:00".transformHour())

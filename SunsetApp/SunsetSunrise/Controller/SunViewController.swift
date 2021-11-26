@@ -95,7 +95,7 @@ final class SunViewController: UIViewController {
         getDates()
         setData()
         setAlarm()
-//        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
+        print("REALM : \(Realm.Configuration.defaultConfiguration.fileURL!)") // for db Realm Studio
 //        debug()
     }
     
